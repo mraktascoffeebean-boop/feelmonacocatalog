@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Man & Woman All Parfum List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loadingScreen" class="loading-screen" aria-label="Uygulama yükleniyor">
+      <div class="loader-core">
+        <img src="feel-monaco-logo.png" alt="Feel Monaco Fragrance" class="loader-logo" />
+        <div class="loader-gender-symbols" aria-hidden="true">
+          <span>♂</span>
+          <span>♀</span>
+        </div>
+        <p>Koku veritabanı başlatılıyor</p>
+      </div>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Filtreler">
+        <div class="sidebar-panel">
+          <div class="brand-block">
+            <img src="feel-monaco-logo.png" alt="Feel Monaco Fragrance" class="logo-mark" />
+            <div>
+              <p class="brand-kicker">Luxury fragrance intelligence</p>
+              <h1>Man &amp; Woman All Parfum List</h1>
+              <p id="catalogMeta">Katalog yükleniyor</p>
+            </div>
+          </div>
+
+          <nav class="dashboard-nav" aria-label="Panel menusu">
+            <a class="active" href="#perfumeGrid">
+              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></span>
+              <span>Panel</span>
+              <span class="nav-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="#perfumeGrid">
+              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="M12 12v9M4 7.5l8 4.5 8-4.5"/></svg></span>
+              <span>Katalog</span>
+              <span class="nav-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="#audienceFilters">
+              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 6a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21a8 8 0 0 1 16 0"/></svg></span>
+              <span>Erkek / Kadin</span>
+              <span class="nav-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="#detailContent">
+              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M8 19v-7M12 19V8M16 19v-4M20 19V9"/></svg></span>
+              <span>Performans</span>
+              <span class="nav-arrow" aria-hidden="true"></span>
+            </a>
+          </nav>
+
+          <label class="search-box">
+            <span>Arama</span>
+            <input id="searchInput" type="search" placeholder="Parfüm, marka veya nota" autocomplete="off" />
+          </label>
+
+          <button id="mobileFilterToggle" class="mobile-filter-toggle" type="button" aria-expanded="false">
+            Filtreleri Aç
+          </button>
+
+          <div class="filter-group">
+            <div class="filter-title">Mevsim</div>
+            <div class="segmented" id="seasonFilters"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-title">Koku Ailesi</div>
+            <div class="chip-grid" id="familyFilters"></div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-title">Kullanım</div>
+            <div class="chip-grid" id="audienceFilters"></div>
+          </div>
+
+          <div class="filter-group compact">
+            <label>
+              Sıralama
+              <select id="sortSelect">
+                <option value="bestseller">Çok satan sırasına göre</option>
+                <option value="name">Parfüm adına göre</option>
+                <option value="brand">Markaya göre</option>
+                <option value="longevity">Kalıcılığa göre</option>
+                <option value="projection">Yayılıma göre</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="data-tools">
+            <button id="importButton" type="button">Veri İçe Aktar</button>
+            <button id="exportButton" type="button">Kataloğu Dışa Aktar</button>
+            <input id="fileInput" type="file" accept=".json,.csv" hidden />
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-view">
+        <section class="topbar" aria-label="Katalog özeti">
+          <div class="topbar-copy">
+            <p class="eyebrow">Feel Monaco Fragrance Intelligence</p>
+            <h2 id="resultTitle">Tüm kokular</h2>
+            <p class="topbar-subtitle">Koku kataloglarini, notalari ve performans analizlerini tek panelden yonetin.</p>
+          </div>
+          <div class="topbar-actions" aria-label="Panel aksiyonlari">
+            <span class="sync-pill"><span aria-hidden="true"></span> Bulut senkron</span>
+            <button id="topExportButton" class="panel-action ghost" type="button">Veri Disa Aktar</button>
+            <button id="topImportButton" class="panel-action primary" type="button">Ice Aktar</button>
+          </div>
+        </section>
+
+        <section class="workspace">
+          <div class="catalog-panel">
+            <div class="panel-head">
+              <div>
+                <span id="resultCount">0 parfüm</span>
+                <strong id="activeFilterLabel">Tüm katalog</strong>
+              </div>
+              <button id="clearFiltersButton" type="button">Temizle</button>
+            </div>
+            <div id="perfumeGrid" class="perfume-grid" aria-live="polite"></div>
+            <button id="loadMoreButton" class="load-more-button" type="button">Daha Fazla Göster</button>
+          </div>
+
+          <aside class="detail-panel" aria-label="Parfüm detayları">
+            <div id="detailContent" class="detail-content"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <div id="detailModal" class="detail-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="modal-card" role="dialog" aria-modal="true" aria-label="Parfüm detay kartı">
+        <button id="modalCloseButton" class="modal-close" type="button" aria-label="Detay kartını kapat">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div id="modalDetailContent" class="detail-content modal-detail-content"></div>
+      </section>
+    </div>
+
+    <template id="perfumeCardTemplate">
+      <button class="perfume-card" type="button">
+        <span class="bottle-visual" aria-hidden="true">
+          <span class="bottle-cap"></span>
+          <span class="bottle-neck"></span>
+          <span class="bottle-body"></span>
+        </span>
+        <span class="card-copy">
+          <span class="brand"></span>
+          <strong class="name"></strong>
+          <span class="accords"></span>
+          <span class="season-row"></span>
+          <span class="card-footer">
+            <span class="mini-stat card-rank"></span>
+            <span class="mini-stat card-hours"></span>
+            <span class="card-arrow" aria-hidden="true"></span>
+          </span>
+        </span>
+      </button>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
