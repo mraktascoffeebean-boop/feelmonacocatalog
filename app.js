@@ -4059,9 +4059,12 @@ const modernEssentials = [
   }
 ];
 
+const catalogTargetPerAudience = 65000;
+const catalogTargetTotal = catalogTargetPerAudience * 2;
+
 const bestsellerProfiles = {
   Erkek: {
-    target: 2000,
+    target: catalogTargetPerAudience,
     editions: [
       "Eau de Parfum",
       "Parfum",
@@ -4138,7 +4141,7 @@ const bestsellerProfiles = {
     ]
   },
   Kadın: {
-    target: 2000,
+    target: catalogTargetPerAudience,
     editions: [
       "Eau de Parfum",
       "Parfum",
@@ -4266,7 +4269,10 @@ const UI_TEXT = {
     top100: "İlk 100 çok satan",
     top250: "İlk 250 çok satan",
     top500: "İlk 500 çok satan",
-    top2000: "İlk 2000 çok satan"
+    top1000: "İlk 1.000 çok satan",
+    top5000: "İlk 5.000 çok satan",
+    top25000: "İlk 25.000 çok satan",
+    top65000: "İlk 65.000 çok satan"
   },
   ratings: { longevity: "Kalıcılık", projection: "Yayılım" },
   notes: { top: "Üst", heart: "Orta", base: "Dip", missing: "Belirtilmedi" }
@@ -4282,11 +4288,17 @@ const state = {
   visibleCount: 0
 };
 
+const textCollator = new Intl.Collator("tr-TR", { sensitivity: "base", numeric: true });
+
 const baseCatalog = normalizeCatalog(
   buildBestsellerCatalog([...modernEssentials, ...elitePerfumes, ...designerEssentials, ...seedPerfumes])
 );
 const baseCatalogIds = new Set(baseCatalog.map((item) => item.id));
-let catalog = normalizeCatalog([...baseCatalog, ...loadCustomPerfumes()]);
+let catalog = [...baseCatalog, ...normalizeCatalog(loadCustomPerfumes())].sort(compareBestseller);
+let catalogById = new Map(catalog.map((item) => [item.id, item]));
+let familyFilterOptions = buildFamilyFilterOptions();
+let currentFilteredCatalog = [];
+let searchDebounceTimer = 0;
 
 const elements = {
   brandKicker: document.querySelector(".brand-kicker"),
@@ -4359,7 +4371,10 @@ function tierLabel(rank) {
   if (rank <= 100) return t("tiers.top100");
   if (rank <= 250) return t("tiers.top250");
   if (rank <= 500) return t("tiers.top500");
-  return t("tiers.top2000");
+  if (rank <= 1000) return t("tiers.top1000");
+  if (rank <= 5000) return t("tiers.top5000");
+  if (rank <= 25000) return t("tiers.top25000");
+  return t("tiers.top65000");
 }
 
 function localizedSeasonNote(item) {
@@ -4368,6 +4383,10 @@ function localizedSeasonNote(item) {
 
 function setText(element, value) {
   if (element) element.textContent = value;
+}
+
+function catalogSummaryText() {
+  return `${catalogTargetTotal.toLocaleString("tr-TR")} parfüm · ${catalogTargetPerAudience.toLocaleString("tr-TR")} erkek · ${catalogTargetPerAudience.toLocaleString("tr-TR")} kadın`;
 }
 
 function buildBestsellerCatalog(items) {
@@ -4424,7 +4443,10 @@ function getBestsellerTier(rank) {
   if (rank <= 100) return "İlk 100 çok satan";
   if (rank <= 250) return "İlk 250 çok satan";
   if (rank <= 500) return "İlk 500 çok satan";
-  return "İlk 2000 çok satan";
+  if (rank <= 1000) return "İlk 1.000 çok satan";
+  if (rank <= 5000) return "İlk 5.000 çok satan";
+  if (rank <= 25000) return "İlk 25.000 çok satan";
+  return "İlk 65.000 çok satan";
 }
 
 function uniqueList(items) {
@@ -4454,9 +4476,34 @@ function normalizeCatalog(items) {
     normalized.bottleImage = item.bottleImage || bottleImageForAudience(normalized.audience);
     normalized.weather = item.weather || buildWeatherGuide(normalized);
     normalized.longevityHours = item.longevityHours || estimateLongevityHours(normalized, index);
+    normalized.searchIndex = buildSearchIndex(normalized);
 
     return normalized;
   });
+}
+
+function buildSearchIndex(item) {
+  return normalizeSearchText(
+    [
+      item.brand,
+      item.name,
+      item.family,
+      item.audience,
+      item.bestsellerTier,
+      tierLabel(item.bestsellerRank || catalogTargetPerAudience),
+      item.topHundred ? "top 100 çok satan top 100 best seller" : "çok satan best seller",
+      item.weather?.label,
+      item.weather?.range,
+      item.longevityHours,
+      ...item.accords,
+      ...item.seasons,
+      ...item.outfits,
+      ...item.occasions,
+      ...item.top,
+      ...item.heart,
+      ...item.base
+    ].join(" ")
+  );
 }
 
 function makeId(value) {
@@ -4681,7 +4728,7 @@ function applyTurkishText() {
 
   setText(elements.brandKicker, t("brandKicker"));
   setText(elements.appTitle, t("appName"));
-  setText(elements.catalogMeta, t("appName"));
+  setText(elements.catalogMeta, catalogSummaryText());
   setText(elements.searchLabel, t("search"));
   setText(elements.importButton, t("import"));
   setText(elements.exportButton, t("export"));
@@ -4737,7 +4784,8 @@ function bindEvents() {
   elements.searchInput.addEventListener("input", (event) => {
     state.query = event.target.value.trim();
     resetVisibleCount();
-    update();
+    window.clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = window.setTimeout(update, 120);
   });
 
   elements.sortSelect.addEventListener("change", (event) => {
@@ -4767,7 +4815,7 @@ function bindEvents() {
 
   elements.loadMoreButton.addEventListener("click", () => {
     state.visibleCount += getCardBatchSize();
-    renderCards(getFilteredCatalog());
+    renderCards(currentFilteredCatalog);
   });
 
   elements.importButton.addEventListener("click", () => elements.fileInput.click());
@@ -4799,12 +4847,7 @@ function renderFilters() {
     update();
   });
 
-  const families = ["Tümü", ...new Set(catalog.map((item) => item.family).filter(Boolean))].sort((a, b) => {
-    if (a === "Tümü") return -1;
-    if (b === "Tümü") return 1;
-    return translateTerm(a).localeCompare(translateTerm(b), currentLocale());
-  });
-  renderButtonGroup(elements.familyFilters, families, state.family, (value) => {
+  renderButtonGroup(elements.familyFilters, familyFilterOptions, state.family, (value) => {
     state.family = value;
     resetVisibleCount();
     update();
@@ -4814,6 +4857,14 @@ function renderFilters() {
     state.audience = value;
     resetVisibleCount();
     update();
+  });
+}
+
+function buildFamilyFilterOptions() {
+  return ["Tümü", ...new Set(catalog.map((item) => item.family).filter(Boolean))].sort((a, b) => {
+    if (a === "Tümü") return -1;
+    if (b === "Tümü") return 1;
+    return textCollator.compare(translateTerm(a), translateTerm(b));
   });
 }
 
@@ -4843,70 +4894,50 @@ function closeMobileFilters() {
 
 function update() {
   const filtered = getFilteredCatalog();
+  currentFilteredCatalog = filtered;
 
   if (!filtered.some((item) => item.id === state.selectedId)) {
     state.selectedId = filtered[0]?.id || "";
   }
 
-  elements.catalogMeta.textContent = t("appName");
+  elements.catalogMeta.textContent = catalogSummaryText();
   elements.resultTitle.textContent = state.query ? t("resultsFor", { query: state.query }) : t("bestsellers");
   elements.resultCount.textContent = `${filtered.length} ${t("perfume")}`;
   elements.activeFilterLabel.textContent = buildActiveLabel();
 
   renderStats(filtered);
   renderCards(filtered);
-  renderDetail(catalog.find((item) => item.id === state.selectedId) || filtered[0]);
+  renderDetail(catalogById.get(state.selectedId) || filtered[0]);
 }
 
 function getFilteredCatalog() {
-  const locale = currentLocale();
   const query = normalizeSearchText(state.query);
-  return catalog
-    .filter((item) => {
-      const haystack = [
-        item.brand,
-        item.name,
-        item.family,
-        translateTerm(item.family),
-        item.audience,
-        translateTerm(item.audience),
-        item.bestsellerTier,
-        tierLabel(item.bestsellerRank || 9999),
-        item.topHundred ? "top 100 çok satan top 100 best seller" : "çok satan best seller",
-        ...item.accords,
-        ...translateList(item.accords),
-        ...item.seasons,
-        ...translateList(item.seasons),
-        ...item.outfits,
-        ...translateList(item.outfits),
-        ...item.occasions,
-        ...translateList(item.occasions),
-        item.weather?.label,
-        item.weather?.range,
-        ...item.top,
-        ...translateList(item.top),
-        ...item.heart,
-        ...translateList(item.heart),
-        ...item.base,
-        ...translateList(item.base)
-      ]
-        .join(" ")
-        .toLocaleLowerCase(locale);
+  const hasSeason = !isAllFilter(state.season);
+  const hasFamily = !isAllFilter(state.family);
+  const hasAudience = !isAllFilter(state.audience);
+  const filtered = [];
 
-      const matchesQuery = !query || normalizeSearchText(haystack).includes(query);
-      const matchesSeason = isAllFilter(state.season) || item.seasons.includes(state.season);
-      const matchesFamily = isAllFilter(state.family) || item.family === state.family;
-      const matchesAudience = isAllFilter(state.audience) || item.audience === state.audience;
+  for (const item of catalog) {
+    if (query && !item.searchIndex.includes(query)) continue;
+    if (hasSeason && !item.seasons.includes(state.season)) continue;
+    if (hasFamily && item.family !== state.family) continue;
+    if (hasAudience && item.audience !== state.audience) continue;
+    filtered.push(item);
+  }
 
-      return matchesQuery && matchesSeason && matchesFamily && matchesAudience;
-    })
-    .sort((a, b) => {
-      if (state.sort === "bestseller") return (a.overallRank || 9999) - (b.overallRank || 9999);
-      if (state.sort === "brand") return a.brand.localeCompare(b.brand, locale) || a.name.localeCompare(b.name, locale);
-      if (state.sort === "longevity") return b.longevity - a.longevity || a.name.localeCompare(b.name, locale);
-      if (state.sort === "projection") return b.projection - a.projection || a.name.localeCompare(b.name, locale);
-      return a.name.localeCompare(b.name, locale);
-    });
+  if (state.sort === "bestseller") return filtered;
+  return filtered.sort(compareForActiveSort);
+}
+
+function compareBestseller(a, b) {
+  return (a.overallRank || Number.MAX_SAFE_INTEGER) - (b.overallRank || Number.MAX_SAFE_INTEGER);
+}
+
+function compareForActiveSort(a, b) {
+  if (state.sort === "brand") return textCollator.compare(a.brand, b.brand) || textCollator.compare(a.name, b.name);
+  if (state.sort === "longevity") return b.longevity - a.longevity || textCollator.compare(a.name, b.name);
+  if (state.sort === "projection") return b.projection - a.projection || textCollator.compare(a.name, b.name);
+  return textCollator.compare(a.name, b.name);
 }
 
 function buildActiveLabel() {
@@ -4979,8 +5010,9 @@ function renderCards(items) {
     if (rankSlot) rankSlot.textContent = `Ranking #${item.bestsellerRank || "-"}`;
     if (hoursSlot) hoursSlot.textContent = item.longevityHours || longevityHours(item.longevity);
     node.addEventListener("click", () => {
+      elements.perfumeGrid.querySelector(".perfume-card.active")?.classList.remove("active");
+      node.classList.add("active");
       state.selectedId = item.id;
-      renderCards(getFilteredCatalog());
       renderDetail(item);
       openPerfumeModal(item);
     });
@@ -5031,6 +5063,10 @@ function closePerfumeModal() {
 function detailMarkup(item) {
   const weather = item.weather || buildWeatherGuide(item);
   const leadAccords = translateList(item.accords).slice(0, 3).join(" / ");
+  const popularityRating = Math.max(
+    1,
+    Math.ceil(((catalogTargetTotal - (item.overallRank || catalogTargetTotal) + 1) / catalogTargetTotal) * 5)
+  );
 
   return `
     <article class="perfume-profile-card">
@@ -5052,11 +5088,11 @@ function detailMarkup(item) {
         <aside class="profile-scoreboard">
           <div class="profile-rank">
             <strong>${escapeHtml(item.bestsellerRank || "-")}</strong>
-            <span>/2000<br />Ranking</span>
+            <span>/${catalogTargetPerAudience.toLocaleString("tr-TR")}<br />Ranking</span>
           </div>
           ${profileMetric("Kalicilik", item.longevityHours, item.longevity)}
           ${profileMetric("Yayilim", `${item.projection}/5`, item.projection)}
-          ${profileMetric("Populerlik", item.bestsellerScore || "-", Math.min(5, Math.max(1, Math.ceil((item.bestsellerScore || 1) / 800))))}
+          ${profileMetric("Populerlik", item.bestsellerScore || "-", popularityRating)}
         </aside>
       </section>
 
@@ -5265,7 +5301,9 @@ async function importCatalog(event) {
   const existingIds = new Set(catalog.map((item) => item.id));
   const uniqueIncoming = incoming.filter((item) => !existingIds.has(item.id));
 
-  catalog = normalizeCatalog([...catalog, ...uniqueIncoming]);
+  catalog = [...catalog, ...uniqueIncoming].sort(compareBestseller);
+  catalogById = new Map(catalog.map((item) => [item.id, item]));
+  familyFilterOptions = buildFamilyFilterOptions();
   saveCustomPerfumes(catalog);
   renderFilters();
   resetVisibleCount();
