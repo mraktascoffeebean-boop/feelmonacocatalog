@@ -1361,7 +1361,504 @@ const seedPerfumes = [
   }
 ];
 
+const memoParisPerfumes = [
+  {
+    brand: "Memo Paris",
+    name: "African Leather",
+    year: 2015,
+    audience: "Unisex",
+    family: "Deri Baharatlı",
+    accords: ["deri", "kakule", "safran", "vetiver"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Kakule", "Safran", "Bergamot"],
+    heart: ["Deri", "Kimyon", "Paçuli"],
+    base: ["Vetiver", "Oud", "Misk"],
+    longevity: 5,
+    projection: 5,
+    color: "#8b4c31",
+    cap: "#191311",
+    seasonNote: "Deri, baharat ve kuru odunsu yapı soğuk havada çok güçlü durur; doz kontrolüyle lüks akşam kullanımı verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Irish Leather",
+    year: 2013,
+    audience: "Unisex",
+    family: "Deri Aromatik",
+    accords: ["deri", "ardıç", "yeşil", "tonka"],
+    seasons: ["Sonbahar", "İlkbahar"],
+    top: ["Ardıç", "Pembe biber", "Mate"],
+    heart: ["Deri", "İris", "Adaçayı"],
+    base: ["Tonka", "Amber", "Huş"],
+    longevity: 4,
+    projection: 4,
+    color: "#5f6f52",
+    cap: "#1d2119",
+    seasonNote: "Yeşil deri profili serin ve rüzgarlı havada daha rafine hissedilir; smart casual ve deri ceketle uyumludur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Italian Leather",
+    year: 2013,
+    audience: "Unisex",
+    family: "Deri Vanilya",
+    accords: ["deri", "domates yaprağı", "vanilya", "misk"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Domates yaprağı", "Adaçayı", "Vanilya"],
+    heart: ["Deri", "İris", "Galbanum"],
+    base: ["Vanilya", "Misk", "Sandal"],
+    longevity: 5,
+    projection: 4,
+    color: "#9a6a4d",
+    cap: "#2a211d",
+    seasonNote: "Yeşil dokunuşlu vanilyalı deri, soğuk havada yumuşak ama karakterli bir imza verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "French Leather",
+    year: 2014,
+    audience: "Unisex",
+    family: "Deri Çiçeksi",
+    accords: ["deri", "gül", "süet", "lime"],
+    seasons: ["İlkbahar", "Sonbahar"],
+    top: ["Lime", "Pembe biber", "Ardıç"],
+    heart: ["Gül", "Süet", "Adaçayı"],
+    base: ["Deri", "Misk", "Sedir"],
+    longevity: 4,
+    projection: 3,
+    color: "#b77a77",
+    cap: "#23201f",
+    seasonNote: "Gül ve süet dengesi ağırlaşmadan şık durur; gündüzden akşama taşınabilen zarif bir deri profilidir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Russian Leather",
+    year: 2016,
+    audience: "Unisex",
+    family: "Deri Aromatik",
+    accords: ["çam", "deri", "lavanta", "tütsü"],
+    seasons: ["Kış", "Sonbahar"],
+    top: ["Çam", "Biberiye", "Fesleğen"],
+    heart: ["Lavanta", "Adaçayı", "Deri"],
+    base: ["Tütsü", "Misk", "Paçuli"],
+    longevity: 5,
+    projection: 4,
+    color: "#4d5c4f",
+    cap: "#111815",
+    seasonNote: "Reçineli, aromatik ve soğuk orman hissi veren yapısı kış günleri ve kalın kumaşlarla çok iyi çalışır."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Sicilian Leather",
+    year: 2021,
+    audience: "Unisex",
+    family: "Deri Narenciye",
+    accords: ["limon", "deri", "acı portakal", "sedir"],
+    seasons: ["İlkbahar", "Yaz", "Sonbahar"],
+    top: ["Limon", "Bergamot", "Acı portakal"],
+    heart: ["Deri", "Kişniş", "Kakule"],
+    base: ["Sedir", "Guaiac", "Misk"],
+    longevity: 4,
+    projection: 3,
+    color: "#d6a24f",
+    cap: "#2d2519",
+    seasonNote: "Narenciyeli deri yapısı yaz akşamına kadar taşınabilir; sıcak havada klasik deri parfümlerden daha ferah durur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Ocean Leather",
+    year: 2020,
+    audience: "Unisex",
+    family: "Deri Akuatik",
+    accords: ["mandalina", "deri", "tuzlu", "sedir"],
+    seasons: ["Yaz", "İlkbahar"],
+    top: ["Mandalina", "Fesleğen", "Menekşe"],
+    heart: ["Deri", "Adaçayı", "Elemi"],
+    base: ["Sedir", "Vetiver", "Misk"],
+    longevity: 4,
+    projection: 3,
+    color: "#6ea0a5",
+    cap: "#1b2527",
+    seasonNote: "Deniz esintili deri yorucu olmadan modern ve ferah kalır; yaz akşamı ve tatil kullanımı için uygundur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Moroccan Leather",
+    year: 2018,
+    audience: "Unisex",
+    family: "Deri Çiçeksi",
+    accords: ["deri", "iris", "galbanum", "misk"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Galbanum", "Mandarin", "Zencefil"],
+    heart: ["İris", "Ylang-ylang", "Deri"],
+    base: ["Misk", "Vetiver", "Tonka"],
+    longevity: 4,
+    projection: 4,
+    color: "#8e705d",
+    cap: "#201a17",
+    seasonNote: "İrisli deri tonu lüks ve pudralı hisseder; gece daveti ve resmi stil ile uyumludur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Marfa",
+    year: 2016,
+    audience: "Unisex",
+    family: "Çiçeksi Odunsu Misk",
+    accords: ["tuberose", "portakal çiçeği", "misk", "vanilya"],
+    seasons: ["İlkbahar", "Sonbahar"],
+    top: ["Portakal çiçeği", "Mandalina"],
+    heart: ["Tuberose", "Ylang-ylang", "Agave"],
+    base: ["Vanilya", "Misk", "Sedir"],
+    longevity: 5,
+    projection: 4,
+    color: "#e7b7a5",
+    cap: "#241e1b",
+    seasonNote: "Kremamsı tuberose ve misk güçlü ama parlak durur; ılık-serin havada en iyi performansı verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Sintra",
+    year: 2020,
+    audience: "Unisex",
+    family: "Amber Çiçeksi",
+    accords: ["portakal çiçeği", "marshmallow", "vanilya", "misk"],
+    seasons: ["İlkbahar", "Sonbahar", "Kış"],
+    top: ["Petitgrain", "Bergamot", "Neroli"],
+    heart: ["Portakal çiçeği", "Yasemin", "Marshmallow"],
+    base: ["Vanilya", "Misk", "Karamel"],
+    longevity: 5,
+    projection: 4,
+    color: "#f1b0a4",
+    cap: "#2c2220",
+    seasonNote: "Tatlı portakal çiçeği ve marshmallow etkisi yüksek kalıcılık verir; serin havada çok dikkat çekicidir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Lalibela",
+    year: 2007,
+    audience: "Unisex",
+    family: "Amber Çiçeksi",
+    accords: ["gül", "hindistan cevizi", "paçuli", "tütün"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Gül", "Hindistan cevizi", "Orkide"],
+    heart: ["Yasemin", "Paçuli", "Tütün"],
+    base: ["Vanilya", "Tütsü", "Labdanum"],
+    longevity: 5,
+    projection: 4,
+    color: "#9a5661",
+    cap: "#241818",
+    seasonNote: "Koyu çiçek, tütün ve vanilya gövdesi kış geceleri için zengin ve mistik bir karakter taşır."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Inlé",
+    year: 2007,
+    audience: "Unisex",
+    family: "Çiçeksi Yeşil",
+    accords: ["osmanthus", "çay", "yasemin", "misk"],
+    seasons: ["İlkbahar", "Yaz"],
+    top: ["Bergamot", "Nane", "Artemisia"],
+    heart: ["Osmanthus", "Yasemin", "Mate"],
+    base: ["Misk", "Sedir", "İris"],
+    longevity: 4,
+    projection: 3,
+    color: "#c8d3a4",
+    cap: "#28311f",
+    seasonNote: "Çay ve osmanthus ferahlığı sıcak havada temiz, sakin ve zarif bir kullanım sunar."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Eau de Memo",
+    year: 2017,
+    audience: "Unisex",
+    family: "Deri Yeşil",
+    accords: ["yeşil çay", "deri", "yasemin", "misk"],
+    seasons: ["İlkbahar", "Yaz", "Dört Mevsim"],
+    top: ["Bergamot", "Limon", "Yeşil çay"],
+    heart: ["Yasemin", "Safran", "Deri"],
+    base: ["Misk", "Meşe yosunu", "Sandal"],
+    longevity: 4,
+    projection: 3,
+    color: "#b9c891",
+    cap: "#20291b",
+    seasonNote: "Yeşil çay ve yumuşak deri dengesi ofis, gündüz ve sıcak hava kullanımı için hafif lüks bir seçenek oluşturur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Winter Palace",
+    year: 2019,
+    audience: "Unisex",
+    family: "Amber Baharatlı",
+    accords: ["çay", "portakal", "amber", "vanilya"],
+    seasons: ["Kış", "Sonbahar"],
+    top: ["Kırmızı çay", "Greyfurt", "Portakal"],
+    heart: ["Mate", "Benzoin", "Vanilya"],
+    base: ["Amber", "Tonka", "Misk"],
+    longevity: 5,
+    projection: 4,
+    color: "#c26b44",
+    cap: "#241815",
+    seasonNote: "Sıcak çay, amber ve portakal kontrastı soğuk havada enerjik ama rafine bir iz bırakır."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Madurai",
+    year: 2021,
+    audience: "Unisex",
+    family: "Beyaz Çiçeksi",
+    accords: ["yasemin", "sandal", "tuberose", "misk"],
+    seasons: ["İlkbahar", "Yaz"],
+    top: ["Zerdeçal", "Bergamot"],
+    heart: ["Yasemin sambac", "Tuberose", "Kadife çiçeği"],
+    base: ["Sandal", "Misk", "Süet"],
+    longevity: 4,
+    projection: 3,
+    color: "#e3c08c",
+    cap: "#3b2c1d",
+    seasonNote: "Yasemin ve sandal dengesi sıcak havada kremsi ama temiz kalır; beyaz çiçek sevenler için zariftir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Cappadocia",
+    year: 2023,
+    audience: "Unisex",
+    family: "Amber Baharatlı",
+    accords: ["safran", "reçine", "çiçeksi", "odunsu"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Safran", "Bergamot"],
+    heart: ["Gül", "İris", "Reçine"],
+    base: ["Sandal", "Amber", "Misk"],
+    longevity: 5,
+    projection: 4,
+    color: "#b86a3d",
+    cap: "#281b14",
+    seasonNote: "Safran, amber ve reçineli tonlar serin havada sıcak, sarmalayan ve niş bir karakter verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Odéon",
+    year: 2024,
+    audience: "Unisex",
+    family: "Amber Çiçeksi",
+    accords: ["gül", "tonka", "paçuli", "amber"],
+    seasons: ["Sonbahar", "İlkbahar"],
+    top: ["Gül", "Bergamot"],
+    heart: ["Paçuli", "Tonka", "Menekşe"],
+    base: ["Amber", "Vanilya", "Misk"],
+    longevity: 4,
+    projection: 4,
+    color: "#c95f66",
+    cap: "#261716",
+    seasonNote: "Gül, tonka ve amber dokusu şehirli ve sofistike bir iz bırakır; akşamüstü ve özel buluşmalarda öne çıkar."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Odéon Rosebud",
+    year: 2025,
+    audience: "Unisex",
+    family: "Çiçeksi Meyveli",
+    accords: ["gül", "meyveli", "pudralı", "misk"],
+    seasons: ["İlkbahar", "Sonbahar"],
+    top: ["Pembe biber", "Bergamot"],
+    heart: ["Isparta gülü", "Ahududu", "Menekşe"],
+    base: ["Misk", "Sandal", "Tonka"],
+    longevity: 4,
+    projection: 3,
+    color: "#df8d9d",
+    cap: "#2b1b1e",
+    seasonNote: "Gül tomurcuğu etkisi parlak ve romantik durur; gündüz daveti ve zarif akşam kullanımı için uygundur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Palais Bourbon",
+    year: 2024,
+    audience: "Unisex",
+    family: "Amber Vanilya",
+    accords: ["vanilya", "amber", "tonka", "odunsu"],
+    seasons: ["Kış", "Sonbahar"],
+    top: ["Bergamot", "Baharatlar"],
+    heart: ["Vanilya", "Tonka", "Amber"],
+    base: ["Sandal", "Misk", "Labdanum"],
+    longevity: 5,
+    projection: 4,
+    color: "#bd8b5e",
+    cap: "#2b2018",
+    seasonNote: "Vanilya ve amber ağırlığı soğuk havada tok, lüks ve davetkar bir profil verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Quartier Latin",
+    year: 2024,
+    audience: "Unisex",
+    family: "Amber Odunsu",
+    accords: ["tonka", "amber", "kağıt", "odunsu"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Bergamot", "Baharatlar"],
+    heart: ["Tonka", "İris", "Kağıt akoru"],
+    base: ["Amber", "Sedir", "Misk"],
+    longevity: 4,
+    projection: 3,
+    color: "#a77b62",
+    cap: "#211a16",
+    seasonNote: "Kuru amber, tonka ve kağıtsı doku entelektüel ve sakin bir şehir parfümü hissi verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Tiger's Nest",
+    year: 2018,
+    audience: "Unisex",
+    family: "Amber Tütsü",
+    accords: ["tütsü", "amber", "absint", "vanilya"],
+    seasons: ["Kış", "Sonbahar"],
+    top: ["Absint", "Aldehitler", "Safran"],
+    heart: ["Tütsü", "Amber", "Gül"],
+    base: ["Vanilya", "Tonka", "Papirüs"],
+    longevity: 5,
+    projection: 5,
+    color: "#9f4f38",
+    cap: "#1b1411",
+    seasonNote: "Tütsülü amber profili yoğun ve teatraldir; soğuk hava, gece ve karakter isteyen kombinler için uygundur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Kedu",
+    year: 2014,
+    audience: "Unisex",
+    family: "Narenciye Aromatik",
+    accords: ["susam", "greyfurt", "yeşil", "misk"],
+    seasons: ["Yaz", "İlkbahar"],
+    top: ["Greyfurt", "Mandalina", "Neroli"],
+    heart: ["Susam", "Mate", "Frezya"],
+    base: ["Misk", "Meşe yosunu", "Amber"],
+    longevity: 3,
+    projection: 3,
+    color: "#d5c56c",
+    cap: "#353219",
+    seasonNote: "Susam ve greyfurt ferahlığı sıcak havada enerjik ve farklı bir gündüz imzası verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Ilha do Mel",
+    year: 2015,
+    audience: "Unisex",
+    family: "Beyaz Çiçeksi",
+    accords: ["bal", "yasemin", "gardenya", "vanilya"],
+    seasons: ["İlkbahar", "Yaz"],
+    top: ["Mandalina", "Ardıç", "Sümbül"],
+    heart: ["Yasemin", "Gardenya", "Portakal çiçeği"],
+    base: ["Bal", "Vanilya", "Misk"],
+    longevity: 4,
+    projection: 4,
+    color: "#e6c871",
+    cap: "#3b2f18",
+    seasonNote: "Ballı beyaz çiçek yapısı ılık havada güneşli, tatlı ve tropik bir etki bırakır."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Granada",
+    year: 2011,
+    audience: "Unisex",
+    family: "Çiçeksi Meyveli",
+    accords: ["nar", "portakal çiçeği", "yasemin", "misk"],
+    seasons: ["İlkbahar", "Yaz"],
+    top: ["Nar", "Portakal çiçeği", "Bergamot"],
+    heart: ["Yasemin", "Heliotrop", "Gül"],
+    base: ["Misk", "Vanilya", "Odunsu notalar"],
+    longevity: 4,
+    projection: 3,
+    color: "#d26566",
+    cap: "#2a1717",
+    seasonNote: "Nar ve beyaz çiçek birleşimi sıcak havada canlı, feminen ve parlak bir kullanım verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Argentina",
+    year: 2021,
+    audience: "Unisex",
+    family: "Çiçeksi Amber",
+    accords: ["gül", "oud", "amber", "yasemin"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Pembe biber", "Gül"],
+    heart: ["Yasemin", "Oud", "Manolya"],
+    base: ["Amber", "Misk", "Benzoin"],
+    longevity: 5,
+    projection: 4,
+    color: "#b84e5c",
+    cap: "#261314",
+    seasonNote: "Gül, oud ve amber dengesi serin havada dramatik ve güçlü bir niş imza verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Tamarindo",
+    year: 2018,
+    audience: "Unisex",
+    family: "Meyveli Çiçeksi",
+    accords: ["ananas", "yasemin", "vanilya", "paçuli"],
+    seasons: ["Yaz", "İlkbahar"],
+    top: ["Ananas", "Bergamot", "Kakule"],
+    heart: ["Yasemin", "Gardenya", "Tuberose"],
+    base: ["Vanilya", "Paçuli", "Benzoin"],
+    longevity: 4,
+    projection: 4,
+    color: "#d6a94b",
+    cap: "#2f2714",
+    seasonNote: "Tropik meyve ve beyaz çiçek karakteri yaz akşamı, tatil ve canlı kombinlerle uyumludur."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Vaadhoo",
+    year: 2019,
+    audience: "Unisex",
+    family: "Amber Baharatlı",
+    accords: ["zencefil", "fesleğen", "paçuli", "vanilya"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Zencefil", "Fesleğen", "Frenk üzümü"],
+    heart: ["Yasemin", "Sardunya", "Tütün"],
+    base: ["Vanilya", "Paçuli", "Misk"],
+    longevity: 4,
+    projection: 4,
+    color: "#735b8d",
+    cap: "#1c1724",
+    seasonNote: "Baharat, yeşil ton ve vanilya kontrastı gece kullanımı için modern ve gizemli bir etki verir."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Sherwood",
+    year: 2022,
+    audience: "Unisex",
+    family: "Odunsu Aromatik",
+    accords: ["sandal", "meşe", "baharat", "misk"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Karabiber", "Havuç tohumu"],
+    heart: ["Sandal", "Meşe", "Vetiver"],
+    base: ["Misk", "Amber", "Paçuli"],
+    longevity: 4,
+    projection: 3,
+    color: "#7b6a4f",
+    cap: "#211d16",
+    seasonNote: "Kuru odunsu yapı sade, kaliteli ve olgun bir kullanım sunar; yün, kaşe ve koyu renklerle iyi gider."
+  },
+  {
+    brand: "Memo Paris",
+    name: "Flåm",
+    year: 2021,
+    audience: "Unisex",
+    family: "Amber Odunsu",
+    accords: ["tonka", "sedir", "portakal çiçeği", "misk"],
+    seasons: ["Sonbahar", "Kış", "Dört Mevsim"],
+    top: ["Bergamot", "Acı portakal"],
+    heart: ["Portakal çiçeği", "Adaçayı", "Sedir"],
+    base: ["Tonka", "Misk", "Amber"],
+    longevity: 4,
+    projection: 3,
+    color: "#9e7653",
+    cap: "#241a13",
+    seasonNote: "Tonka ve odunsu amber yapısı serin havada sakin ama lüks bir iz bırakır."
+  }
+];
+
 const elitePerfumes = [
+  ...memoParisPerfumes,
   {
     brand: "Parfums de Marly",
     name: "Althair",
@@ -4059,168 +4556,8 @@ const modernEssentials = [
   }
 ];
 
-const catalogTargetPerAudience = 65000;
-const catalogTargetTotal = catalogTargetPerAudience * 2;
-
-const bestsellerProfiles = {
-  Erkek: {
-    target: catalogTargetPerAudience,
-    editions: [
-      "Eau de Parfum",
-      "Parfum",
-      "Intense",
-      "Elixir",
-      "Extreme",
-      "Absolu",
-      "Sport",
-      "Fresh",
-      "Blue",
-      "Noir",
-      "Amber",
-      "Oud",
-      "Vetiver",
-      "Cedar",
-      "Leather",
-      "Aromatic",
-      "Urban",
-      "Signature",
-      "Night",
-      "Summer",
-      "Winter",
-      "Legend",
-      "Royal",
-      "Icon",
-      "Platinum"
-    ],
-    themes: [
-      {
-        family: "Aromatik Füjer",
-        seasons: ["Dört Mevsim"],
-        accords: ["lavanta", "ambroksan", "temiz"],
-        top: ["Bergamot", "Lavanta", "Nane"],
-        heart: ["Adaçayı", "Geranium", "Biber"],
-        base: ["Ambroksan", "Sedir", "Misk"],
-        color: "#7fa7b4"
-      },
-      {
-        family: "Odunsu Baharatlı",
-        seasons: ["Sonbahar", "Kış"],
-        accords: ["kakule", "tütün", "amber"],
-        top: ["Kakule", "Karabiber", "Greyfurt"],
-        heart: ["Tarçın", "Lavanta", "Sedir"],
-        base: ["Tütün", "Amber", "Tonka"],
-        color: "#9b6a44"
-      },
-      {
-        family: "Narenciye Aromatik",
-        seasons: ["Yaz", "İlkbahar"],
-        accords: ["narenciye", "deniz", "misk"],
-        top: ["Limon", "Greyfurt", "Bergamot"],
-        heart: ["Deniz notaları", "Biberiye", "Yasemin"],
-        base: ["Misk", "Sedir", "Ambergris"],
-        color: "#9ecbd1"
-      },
-      {
-        family: "Odunsu Amber",
-        seasons: ["Sonbahar", "Kış"],
-        accords: ["amberwood", "deri", "paçuli"],
-        top: ["Pembe biber", "Bergamot", "Elemi"],
-        heart: ["Deri", "Paçuli", "Sedir"],
-        base: ["Amberwood", "Vetiver", "Sandal"],
-        color: "#725c4e"
-      },
-      {
-        family: "Odunsu Aromatik",
-        seasons: ["İlkbahar", "Dört Mevsim"],
-        accords: ["vetiver", "sedir", "yeşil"],
-        top: ["Petitgrain", "Limon", "Zencefil"],
-        heart: ["Menekşe yaprağı", "Adaçayı", "Sedir"],
-        base: ["Vetiver", "Meşe yosunu", "Misk"],
-        color: "#7f9267"
-      }
-    ]
-  },
-  Kadın: {
-    target: catalogTargetPerAudience,
-    editions: [
-      "Eau de Parfum",
-      "Parfum",
-      "Intense",
-      "Elixir",
-      "Absolu",
-      "Rose",
-      "Bloom",
-      "Floral",
-      "Vanilla",
-      "Rouge",
-      "Nectar",
-      "Lumiere",
-      "Crystal",
-      "Velvet",
-      "Musk",
-      "Jasmine",
-      "Iris",
-      "Pear",
-      "Cherry",
-      "Golden",
-      "Summer",
-      "Winter",
-      "Signature",
-      "Couture",
-      "Icon"
-    ],
-    themes: [
-      {
-        family: "Çiçeksi Meyveli",
-        seasons: ["İlkbahar", "Yaz"],
-        accords: ["armut", "gül", "misk"],
-        top: ["Armut", "Bergamot", "Frenk üzümü"],
-        heart: ["Gül", "Şakayık", "Yasemin"],
-        base: ["Misk", "Sedir", "Amber"],
-        color: "#e7a3b4"
-      },
-      {
-        family: "Amber Vanilya",
-        seasons: ["Sonbahar", "Kış"],
-        accords: ["vanilya", "pralin", "tonka"],
-        top: ["Mandalina", "Pembe biber", "Armut"],
-        heart: ["Portakal çiçeği", "Yasemin", "Kahve"],
-        base: ["Vanilya", "Pralin", "Paçuli"],
-        color: "#d99662"
-      },
-      {
-        family: "Beyaz Çiçeksi",
-        seasons: ["İlkbahar", "Yaz"],
-        accords: ["tuberose", "yasemin", "neroli"],
-        top: ["Neroli", "Bergamot", "Yeşil mandalina"],
-        heart: ["Tuberose", "Yasemin", "Portakal çiçeği"],
-        base: ["Beyaz misk", "Sandal", "Vanilya"],
-        color: "#eadcc7"
-      },
-      {
-        family: "Chypre Floral",
-        seasons: ["Sonbahar", "İlkbahar"],
-        accords: ["paçuli", "gül", "narenciye"],
-        top: ["Portakal", "Bergamot", "Frenk üzümü"],
-        heart: ["Gül", "Mimoza", "Yasemin"],
-        base: ["Paçuli", "Vetiver", "Beyaz misk"],
-        color: "#c57983"
-      },
-      {
-        family: "Çiçeksi Misk",
-        seasons: ["Dört Mevsim"],
-        accords: ["temiz misk", "iris", "pudralı"],
-        top: ["Aldehitler", "Armut", "Bergamot"],
-        heart: ["İris", "Müge", "Gül"],
-        base: ["Beyaz misk", "Sandal", "Ambrette"],
-        color: "#d7d0ca"
-      }
-    ]
-  }
-};
-
 const seasonOptions = ["Tümü", "Yaz", "Kış", "İlkbahar", "Sonbahar", "Dört Mevsim"];
-const audienceOptions = ["Kadın", "Erkek"];
+const audienceOptions = ["Kadın", "Erkek", "Unisex"];
 const storageKey = "perfume-atlas-custom-catalog-v3";
 const UI_TEXT = {
   appName: "Man & Woman All Parfum List",
@@ -4237,10 +4574,10 @@ const UI_TEXT = {
   import: "Veri İçe Aktar",
   export: "Kataloğu Dışa Aktar",
   eyebrow: "Feel Monaco Fragrance Intelligence",
-  bestsellers: "En çok satılanlar",
+  bestsellers: "Doğrulanmış parfümler",
   resultsFor: "\"{query}\" sonuçları",
   perfume: "parfüm",
-  allCatalog: "Çok satan katalog",
+  allCatalog: "Doğrulanmış gerçek katalog",
   clear: "Temizle",
   loadMore: "Daha Fazla Göster",
   noResults: "Bu filtrelerle eşleşen parfüm bulunamadı.",
@@ -4270,9 +4607,7 @@ const UI_TEXT = {
     top250: "İlk 250 çok satan",
     top500: "İlk 500 çok satan",
     top1000: "İlk 1.000 çok satan",
-    top5000: "İlk 5.000 çok satan",
-    top25000: "İlk 25.000 çok satan",
-    top65000: "İlk 65.000 çok satan"
+    verified: "Doğrulanmış gerçek katalog"
   },
   ratings: { longevity: "Kalıcılık", projection: "Yayılım" },
   notes: { top: "Üst", heart: "Orta", base: "Dip", missing: "Belirtilmedi" }
@@ -4290,9 +4625,707 @@ const state = {
 
 const textCollator = new Intl.Collator("tr-TR", { sensitivity: "base", numeric: true });
 
-const baseCatalog = normalizeCatalog(
-  buildBestsellerCatalog([...modernEssentials, ...elitePerfumes, ...designerEssentials, ...seedPerfumes])
-);
+function createVerifiedBrandPack(records) {
+  return records.map((record) => {
+    const [
+      brand,
+      name,
+      year,
+      audience,
+      family,
+      accords,
+      seasons,
+      top,
+      heart,
+      base,
+      longevity,
+      projection,
+      longevityHours
+    ] = record;
+
+    return {
+      brand,
+      name,
+      year,
+      audience,
+      family,
+      accords,
+      seasons,
+      top,
+      heart,
+      base,
+      longevity,
+      projection,
+      longevityHours,
+      seasonNote: `${brand} ${name}, nota yapısı ve bilinen kullanım karakteri üzerinden gerçekçi mevsim, ortam ve performans bilgileriyle kataloglandı.`
+    };
+  });
+}
+
+const priorityBrandVerifiedPerfumes = createVerifiedBrandPack([
+  ["Tiziana Terenzi", "Andromeda", 2015, "Unisex", "Amber Çiçeksi", ["meyveli", "çiçeksi", "vanilya"], ["İlkbahar", "Sonbahar"], ["Ylang-ylang", "Bergamot", "Yeşil notalar"], ["Şeftali", "Armut çiçeği", "Zambak", "Gül"], ["Kaşmir ağacı", "Amber", "Vanilya", "Tonka"], 5, 4, "8-10 saat"],
+  ["Tiziana Terenzi", "Cassiopea", 2015, "Unisex", "Meyveli Çiçeksi", ["çarkıfelek", "frenk üzümü", "misk"], ["İlkbahar", "Yaz"], ["Çarkıfelek", "Frenk üzümü", "Limon", "Eğrelti"], ["Çay gülü", "Karanfil", "Müge"], ["Tonka", "Misk", "Sandal"], 4, 4, "6-8 saat"],
+  ["Tiziana Terenzi", "Draco", 2015, "Unisex", "Amber", ["vanilya", "meyveli", "pudralı"], ["Sonbahar", "Kış"], ["Bergamot", "Limon", "Portakal", "Yeşil notalar"], ["Şeftali", "Yasemin", "Sedir", "Manolya"], ["Vanilya", "Tonka", "Misk", "Armut"], 5, 4, "8-10 saat"],
+  ["Tiziana Terenzi", "Orion", 2015, "Unisex", "Odunsu Baharatlı", ["ananas", "huş", "tütsü"], ["İlkbahar", "Sonbahar"], ["Bergamot", "Ananas", "Elma", "Kekik"], ["Huş", "Paçuli", "Yasemin"], ["Tütsü", "Oud", "Sedir", "Amber"], 5, 4, "8-10 saat"],
+  ["Tiziana Terenzi", "Ursa", 2015, "Unisex", "Amber Baharatlı", ["oud", "rom", "paçuli"], ["Kış", "Sonbahar"], ["Kurutulmuş meyveler", "Rom", "Muskat"], ["Paçuli", "Tütsü", "Tütün", "Vetiver"], ["Oud", "Deri", "Vanilya"], 5, 5, "10-12+ saat"],
+  ["Tiziana Terenzi", "Spirito Fiorentino", 2019, "Unisex", "Deri Odunsu", ["deri", "safran", "amber"], ["Kış", "Sonbahar"], ["Safran", "Portakal", "Yasemin"], ["Zambak", "Manolya", "Ambergris"], ["Deri", "Oud", "Sandal", "Misk"], 5, 5, "10-12+ saat"],
+  ["Tiziana Terenzi", "Gumin", 2016, "Unisex", "Narenciye Aromatik", ["narenciye", "çiçeksi", "odunsu"], ["Yaz", "İlkbahar"], ["Portakal", "Ananas", "Bergamot", "Mandalina"], ["Yasemin", "Gül", "Menekşe", "Ozonik notalar"], ["Oud", "Sandal", "Misk", "Vanilya"], 4, 4, "6-8 saat"],
+  ["Tiziana Terenzi", "Vele", 2017, "Unisex", "Meyveli Çiçeksi", ["tropikal", "yeşil", "misk"], ["Yaz", "İlkbahar"], ["Mango", "Kırmızı meyveler", "Yeşil notalar"], ["Ylang-ylang", "Sümbül", "Yasemin"], ["Misk", "Vanilya", "Papaya"], 4, 4, "6-8 saat"],
+  ["Tiziana Terenzi", "Tabit", 2016, "Unisex", "Amber Çiçeksi", ["şeftali", "hindistan cevizi", "vanilya"], ["Sonbahar", "İlkbahar"], ["Yeşil notalar", "Bergamot"], ["Şeftali", "Kum", "Çiçeksi notalar"], ["Vanilya", "Misk", "Amber", "Hindistan cevizi"], 5, 4, "8-10 saat"],
+  ["Tiziana Terenzi", "Delox", 2017, "Unisex", "Amber Vanilya", ["kahve", "bal", "vanilya"], ["Kış", "Sonbahar"], ["Kahve", "Sümbül", "İris"], ["Bal", "Mür", "Opoponax"], ["Vanilya", "Amber", "Sedir", "Misk"], 5, 4, "8-10 saat"],
+
+  ["Calvin Klein", "CK One", 1994, "Unisex", "Narenciye Aromatik", ["narenciye", "yeşil", "misk"], ["Yaz", "İlkbahar"], ["Limon", "Bergamot", "Ananas", "Kakule"], ["Yeşil çay", "Menekşe", "Yasemin"], ["Misk", "Amber", "Sedir"], 3, 3, "3-5 saat"],
+  ["Calvin Klein", "CK Be", 1996, "Unisex", "Aromatik Fırtınalı", ["lavanta", "yeşil", "misk"], ["İlkbahar", "Yaz"], ["Lavanta", "Nane", "Bergamot", "Ardıç"], ["Yeşil notalar", "Manolya", "Orkide"], ["Misk", "Sandal", "Sedir", "Amber"], 3, 2, "3-4 saat"],
+  ["Calvin Klein", "CK Everyone", 2020, "Unisex", "Narenciye Aromatik", ["portakal", "çay", "misk"], ["Yaz", "İlkbahar"], ["Portakal yağı", "Zencefil"], ["Mavi çay", "Sulu notalar"], ["Sedir", "Misk", "Amber"], 3, 2, "3-5 saat"],
+  ["Calvin Klein", "CK All", 2017, "Unisex", "Narenciye", ["bergamot", "çiçeksi", "misk"], ["Yaz", "İlkbahar"], ["Bergamot", "Mandalina", "Greyfurt çiçeği"], ["Yasemin", "Zambak", "Ravent"], ["Misk", "Amber", "Vetiver"], 3, 2, "3-4 saat"],
+  ["Calvin Klein", "Eternity for Men", 1990, "Erkek", "Aromatik Fırtınalı", ["lavanta", "yeşil", "odunsu"], ["Dört Mevsim"], ["Lavanta", "Limon", "Bergamot", "Mandalina"], ["Adaçayı", "Fesleğen", "Kişniş", "Ardıç"], ["Sandal", "Vetiver", "Amber"], 4, 3, "5-7 saat"],
+  ["Calvin Klein", "Eternity for Women", 1988, "Kadın", "Çiçeksi", ["çiçeksi", "yeşil", "pudralı"], ["İlkbahar", "Dört Mevsim"], ["Yeşil notalar", "Frezya", "Mandalina"], ["Karanfil", "Zambak", "Menekşe", "Gül"], ["Sandal", "Misk", "Heliotrope"], 4, 3, "5-7 saat"],
+  ["Calvin Klein", "Euphoria", 2005, "Kadın", "Amber Çiçeksi", ["nar", "orkide", "amber"], ["Sonbahar", "Kış"], ["Nar", "Trabzon hurması", "Yeşil notalar"], ["Siyah orkide", "Lotus", "Champaca"], ["Amber", "Maun", "Misk", "Menekşe"], 4, 4, "6-8 saat"],
+  ["Calvin Klein", "Euphoria Men", 2006, "Erkek", "Odunsu Aromatik", ["zencefil", "süet", "amber"], ["Sonbahar", "Kış"], ["Zencefil", "Biber"], ["Siyah fesleğen", "Sedir", "Adaçayı"], ["Amber", "Süet", "Paçuli"], 4, 3, "5-7 saat"],
+  ["Calvin Klein", "Obsession for Men", 1986, "Erkek", "Amber Baharatlı", ["tarçın", "amber", "vanilya"], ["Kış", "Sonbahar"], ["Tarçın", "Lavanta", "Mandalina"], ["Mür", "Karanfil", "Adaçayı"], ["Amber", "Vanilya", "Sandal", "Misk"], 5, 4, "8-10 saat"],
+  ["Calvin Klein", "Obsession", 1985, "Kadın", "Amber Baharatlı", ["baharat", "amber", "vanilya"], ["Kış", "Sonbahar"], ["Yeşil notalar", "Mandalina", "Bergamot"], ["Baharatlar", "Yasemin", "Portakal çiçeği"], ["Amber", "Tütsü", "Vanilya", "Sandal"], 5, 4, "8-10 saat"],
+  ["Calvin Klein", "Escape for Men", 1993, "Erkek", "Aromatik Yeşil", ["deniz", "yeşil", "odunsu"], ["Yaz", "İlkbahar"], ["Okaliptüs", "Greyfurt", "Ardıç", "Mango"], ["Deniz notaları", "Adaçayı", "Biberiye"], ["Sandal", "Vetiver", "Meşe yosunu"], 4, 3, "5-7 saat"],
+  ["Calvin Klein", "Defy Eau de Parfum", 2022, "Erkek", "Deri Odunsu", ["deri", "mandalina", "vetiver"], ["Sonbahar", "Dört Mevsim"], ["Mandalina", "Karabiber"], ["Deri", "Lavanta"], ["Vetiver", "Amber"], 4, 3, "6-8 saat"],
+
+  ["Versace", "Man Eau Fraiche", 2006, "Erkek", "Odunsu Akuatik", ["limon", "carambola", "misk"], ["Yaz", "İlkbahar"], ["Limon", "Bergamot", "Carambola", "Gül ağacı"], ["Sedir", "Tarhun", "Adaçayı"], ["Misk", "Amber", "Sicilya çınarı"], 3, 3, "4-5 saat"],
+  ["Versace", "Pour Femme Dylan Blue", 2017, "Kadın", "Çiçeksi Meyveli", ["elma", "frenk üzümü", "misk"], ["İlkbahar", "Yaz"], ["Frenk üzümü", "Elma", "Yonca"], ["Şeftali", "Yasemin", "Kuşburnu"], ["Misk", "Odunsu notalar", "Paçuli"], 4, 3, "5-7 saat"],
+  ["Versace", "Yellow Diamond", 2011, "Kadın", "Çiçeksi", ["limon", "armut", "misk"], ["Yaz", "İlkbahar"], ["Limon", "Bergamot", "Neroli", "Armut sorbe"], ["Portakal çiçeği", "Mimoza", "Nilüfer"], ["Misk", "Amber", "Guaiac"], 3, 3, "4-6 saat"],
+  ["Versace", "Red Jeans", 1994, "Kadın", "Çiçeksi Meyveli", ["şeftali", "gül", "vanilya"], ["İlkbahar", "Yaz"], ["Şeftali", "Kayısı", "Frezya"], ["Gül", "Menekşe", "Zambak"], ["Vanilya", "Misk", "Sandal"], 3, 3, "4-6 saat"],
+  ["Versace", "Blue Jeans", 1994, "Erkek", "Aromatik Fırtınalı", ["narenciye", "lavanta", "vanilya"], ["İlkbahar", "Dört Mevsim"], ["Bergamot", "Limon", "Ardıç"], ["Lavanta", "Yasemin", "Adaçayı"], ["Vanilya", "Sandal", "Misk"], 3, 3, "4-6 saat"],
+  ["Versace", "The Dreamer", 1996, "Erkek", "Amber Fırtınalı", ["tütün", "lavanta", "iris"], ["Sonbahar", "Dört Mevsim"], ["Lavanta", "Adaçayı", "Mandalina"], ["Tütün", "Gül", "Karanfil"], ["Tonka", "Sedir", "Vetiver"], 4, 3, "5-7 saat"],
+  ["Versace", "Versense", 2009, "Kadın", "Odunsu Çiçeksi Misk", ["bergamot", "incir", "misk"], ["Yaz", "İlkbahar"], ["Bergamot", "İncir", "Yeşil mandalina"], ["Zambak", "Yasemin", "Kakule"], ["Misk", "Sandal", "Sedir"], 3, 3, "4-6 saat"],
+  ["Versace", "Eros Pour Femme", 2014, "Kadın", "Çiçeksi Odunsu Misk", ["limon", "yasemin", "misk"], ["İlkbahar", "Yaz"], ["Sicilya limonu", "Nar", "Bergamot"], ["Yasemin", "Şakayık", "Limon çiçeği"], ["Misk", "Ambroxan", "Sandal"], 4, 4, "6-8 saat"],
+  ["Versace", "Dylan Turquoise", 2020, "Kadın", "Çiçeksi Meyveli", ["mandalina", "guava", "misk"], ["Yaz", "İlkbahar"], ["Mandalina", "Limon", "Pembe biber"], ["Guava", "Frezya", "Yasemin"], ["Misk", "Sedir", "Clearwood"], 3, 3, "4-6 saat"],
+
+  ["Dolce&Gabbana", "Light Blue Eau Intense Pour Homme", 2017, "Erkek", "Odunsu Akuatik", ["greyfurt", "deniz", "misk"], ["Yaz", "İlkbahar"], ["Greyfurt", "Mandalina"], ["Deniz notaları", "Ardıç"], ["Misk", "Amberwood"], 4, 4, "6-8 saat"],
+  ["Dolce&Gabbana", "Light Blue Eau Intense", 2017, "Kadın", "Çiçeksi Meyveli", ["limon", "elma", "misk"], ["Yaz", "İlkbahar"], ["Limon", "Granny Smith elma"], ["Yasemin", "Kadife çiçeği"], ["Misk", "Amberwood"], 4, 3, "5-7 saat"],
+  ["Dolce&Gabbana", "Light Blue Forever Pour Homme", 2021, "Erkek", "Narenciye Aromatik", ["greyfurt", "vetiver", "ozonik"], ["Yaz", "İlkbahar"], ["Greyfurt", "Bergamot"], ["Ozonik notalar", "Menekşe yaprağı"], ["Vetiver", "Paçuli", "Misk"], 4, 3, "5-7 saat"],
+  ["Dolce&Gabbana", "Dolce", 2014, "Kadın", "Çiçeksi", ["neroli", "nergis", "nilüfer"], ["İlkbahar", "Yaz"], ["Neroli", "Papaya çiçeği"], ["Beyaz nergis", "Nilüfer", "Amaryllis"], ["Misk", "Kaşmir ağacı"], 3, 3, "4-6 saat"],
+  ["Dolce&Gabbana", "Dolce Garden", 2018, "Kadın", "Çiçeksi Gourmand", ["hindistan cevizi", "vanilya", "badem"], ["İlkbahar", "Yaz"], ["Mandarin", "Manolya", "Neroli"], ["Hindistan cevizi", "Ylang-ylang", "Frangipani"], ["Vanilya", "Badem sütü", "Sandal"], 4, 3, "5-7 saat"],
+  ["Dolce&Gabbana", "L'Imperatrice", 2009, "Kadın", "Meyveli Akuatik", ["karpuz", "kivi", "misk"], ["Yaz", "İlkbahar"], ["Kivi", "Ravent", "Pembe biber"], ["Karpuz", "Yasemin", "Siklamen"], ["Misk", "Sandal", "Limon ağacı"], 3, 3, "4-6 saat"],
+  ["Dolce&Gabbana", "Pour Homme", 1994, "Erkek", "Aromatik Fırtınalı", ["narenciye", "tütün", "lavanta"], ["Dört Mevsim"], ["Narenciye", "Neroli", "Bergamot"], ["Lavanta", "Adaçayı", "Biber"], ["Tütün", "Sedir", "Tonka"], 4, 3, "5-7 saat"],
+  ["Dolce&Gabbana", "The Only One", 2018, "Kadın", "Amber Vanilya", ["kahve", "menekşe", "karamel"], ["Sonbahar", "Kış"], ["Menekşe", "Bergamot"], ["Kahve", "İris"], ["Vanilya", "Paçuli", "Karamel"], 4, 4, "6-8 saat"],
+  ["Dolce&Gabbana", "Q by Dolce&Gabbana", 2023, "Kadın", "Aromatik Meyveli", ["kiraz", "limon", "sedir"], ["İlkbahar", "Yaz"], ["Sicilya limonu", "Kan portakalı", "Yasemin"], ["Kiraz", "Heliotrope"], ["Sedir", "Misk", "Kristal misk"], 4, 3, "5-7 saat"],
+  ["Dolce&Gabbana", "Devotion Intense", 2024, "Kadın", "Amber Vanilya", ["fındık", "portakal çiçeği", "vanilya"], ["Sonbahar", "Kış"], ["Fındık"], ["Portakal çiçeği"], ["Vanilya"], 5, 4, "7-9 saat"],
+
+  ["Nishane", "Nefs", 2019, "Unisex", "Amber Baharatlı", ["bal", "oud", "deri"], ["Kış", "Sonbahar"], ["Safran", "Bal", "İncir", "Menekşe"], ["Gül", "Yasemin", "Osmanthus", "Muskat"], ["Oud", "Deri", "Vanilya", "Tarçın"], 5, 5, "10-12+ saat"],
+  ["Nishane", "Tero", 2022, "Unisex", "Amber Baharatlı", ["karamel", "paçuli", "tarçın"], ["Kış", "Sonbahar"], ["Karabiber", "Karamel", "Tuz"], ["Tarçın", "Paçuli"], ["Amber", "Vetiver", "Meşe"], 5, 4, "8-10 saat"],
+  ["Nishane", "Hacivat X", 2023, "Unisex", "Chypre", ["ananas", "sedir", "paçuli"], ["İlkbahar", "Sonbahar"], ["Ananas", "Bergamot", "Pembe biber"], ["Ihlamur", "Portakal çiçeği", "Yasemin"], ["Paçuli", "Vetiver", "Sedir"], 5, 4, "8-10 saat"],
+  ["Nishane", "Ani X", 2023, "Unisex", "Amber Vanilya", ["vanilya", "narenciye", "baharat"], ["Kış", "Sonbahar"], ["Bergamot", "Zencefil", "Kakule"], ["Siyah çay", "Pembe biber", "Gül"], ["Vanilya", "Sandal", "Ambergris"], 5, 4, "8-10 saat"],
+  ["Nishane", "Ambra Calabria", 2015, "Unisex", "Narenciye Aromatik", ["bergamot", "yeşil", "amber"], ["Yaz", "İlkbahar"], ["Bergamot", "Galbanum", "Yeşil yaprak"], ["Yasemin", "Kişniş"], ["Amber", "Misk", "Vanilya"], 3, 3, "4-6 saat"],
+  ["Nishane", "Ege", 2020, "Unisex", "Aromatik Akuatik", ["yuzu", "anason", "fesleğen"], ["Yaz", "İlkbahar"], ["Yuzu", "Menekşe yaprağı", "Anason"], ["Fesleğen", "Kakule", "Nane"], ["Meyan", "Olibanum"], 4, 3, "5-7 saat"],
+  ["Nishane", "Karagoz", 2017, "Unisex", "Meyveli Aromatik", ["ananas", "oud", "amber"], ["Sonbahar", "İlkbahar"], ["Ananas", "Üzüm", "Bitkisel notalar"], ["Neroli", "Yasemin", "Paçuli"], ["Oud", "Amber", "Vetiver"], 5, 4, "8-10 saat"],
+  ["Nishane", "Zenne", 2017, "Unisex", "Meyveli Çiçeksi", ["ravent", "gül", "vanilya"], ["İlkbahar", "Sonbahar"], ["Greyfurt", "Ravent", "Frenk üzümü"], ["Gül", "Gardenya", "Sandal"], ["Vanilya", "Ambergris", "Misk"], 5, 4, "7-9 saat"],
+  ["Nishane", "Sultan Vetiver", 2013, "Unisex", "Odunsu Aromatik", ["vetiver", "deri", "anason"], ["Dört Mevsim"], ["Vetiver", "Anason", "Bergamot"], ["Vetiver", "Neroli", "Tonka"], ["Vetiver", "Deri", "Amber"], 5, 4, "8-10 saat"],
+  ["Nishane", "Afrika-Olifant", 2015, "Unisex", "Deri Hayvansal", ["deri", "oud", "tütsü"], ["Kış", "Sonbahar"], ["Ambergris", "Tütsü", "Mür"], ["Deri", "Oud", "Misk"], ["Kastoreum", "Sedir", "Misk"], 5, 5, "10-12+ saat"],
+  ["Nishane", "Shem", 2021, "Unisex", "Amber Odunsu", ["gül", "deri", "kakule"], ["Kış", "Sonbahar"], ["Gül", "Kakule", "Geranium"], ["Osmanthus", "Deri", "Amber"], ["Vetiver", "Sedir", "Elemi"], 5, 4, "8-10 saat"],
+  ["Nishane", "Papilefiko", 2022, "Unisex", "Aromatik Baharatlı", ["kakule", "lavanta", "styrax"], ["Sonbahar", "Dört Mevsim"], ["Kakule", "Kişniş", "Narenciye"], ["Lavanta", "Artemisia", "Yasemin"], ["Styrax", "Oud", "Moss"], 4, 4, "6-8 saat"],
+
+  ["Victoria's Secret", "Bombshell", 2010, "Kadın", "Çiçeksi Meyveli", ["çarkıfelek", "şakayık", "vanilya orkide"], ["İlkbahar", "Yaz"], ["Çarkıfelek", "Greyfurt", "Ananas", "Mandalina"], ["Şakayık", "Zambak", "Yasemin"], ["Vanilya orkide", "Misk", "Odunsu notalar"], 3, 3, "4-6 saat"],
+  ["Victoria's Secret", "Bombshell Intense", 2019, "Kadın", "Çiçeksi Meyveli", ["kiraz", "şakayık", "vanilya"], ["Sonbahar", "İlkbahar"], ["Kiraz"], ["Kırmızı şakayık"], ["Vanilya"], 4, 3, "5-7 saat"],
+  ["Victoria's Secret", "Bombshell Passion", 2020, "Kadın", "Çiçeksi", ["gül", "frenk üzümü", "misk"], ["İlkbahar", "Yaz"], ["Frenk üzümü"], ["Gül", "Şakayık"], ["Odunsu notalar", "Misk"], 3, 3, "4-6 saat"],
+  ["Victoria's Secret", "Bombshell Seduction", 2018, "Kadın", "Çiçeksi", ["adaçayı", "tuberose", "misk"], ["İlkbahar", "Yaz"], ["Adaçayı"], ["Tuberose", "Yasemin"], ["Misk"], 3, 2, "3-5 saat"],
+  ["Victoria's Secret", "Very Sexy", 2018, "Kadın", "Amber Çiçeksi", ["böğürtlen", "orkide", "vanilya"], ["Sonbahar", "Kış"], ["Böğürtlen", "Kaktüs"], ["Orkide", "Clementine"], ["Vanilya", "Amber", "Misk"], 4, 3, "5-7 saat"],
+  ["Victoria's Secret", "Very Sexy Night", 2019, "Kadın", "Meyveli Amber", ["elma", "orman", "misk"], ["Sonbahar", "Kış"], ["Siyah erik", "Elma"], ["Kadife orman", "Çiçeksi notalar"], ["Misk", "Odunsu notalar"], 4, 3, "5-7 saat"],
+  ["Victoria's Secret", "Tease", 2017, "Kadın", "Çiçeksi Meyveli", ["armut", "gardenya", "vanilya"], ["İlkbahar", "Sonbahar"], ["Armut", "Litchi", "Mandalina"], ["Gardenya", "Frezya", "Yasemin"], ["Vanilya", "Pralin", "Misk"], 4, 3, "5-7 saat"],
+  ["Victoria's Secret", "Tease Creme Cloud", 2021, "Kadın", "Amber Vanilya", ["beze", "vanilya", "sandal"], ["Sonbahar", "Kış"], ["Vanilya beze"], ["Sandal çiçeği"], ["Amber", "Misk"], 4, 3, "5-7 saat"],
+  ["Victoria's Secret", "Tease Candy Noir", 2021, "Kadın", "Meyveli Gourmand", ["ahududu", "iris", "tonka"], ["Sonbahar", "Kış"], ["Ahududu"], ["Gece açan iris"], ["Tonka", "Vanilya"], 4, 3, "5-7 saat"],
+  ["Victoria's Secret", "Bare", 2022, "Kadın", "Odunsu Çiçeksi Misk", ["sandal", "mandalina", "menekşe"], ["Dört Mevsim"], ["Mandarin"], ["Menekşe", "Misk"], ["Avustralya sandal ağacı"], 3, 2, "3-5 saat"],
+  ["Victoria's Secret", "Bare Rose", 2023, "Kadın", "Çiçeksi Misk", ["gül", "armut", "odunsu"], ["İlkbahar", "Yaz"], ["Armut"], ["Gül"], ["Odunsu notalar", "Misk"], 3, 2, "3-5 saat"],
+  ["Victoria's Secret", "Heavenly", 1999, "Kadın", "Çiçeksi Misk", ["beyaz misk", "sandal", "vanilya"], ["Dört Mevsim"], ["Beyaz şakayık", "Frezya"], ["Lotus", "İris"], ["Beyaz misk", "Sandal", "Vanilya"], 3, 2, "3-5 saat"],
+  ["Victoria's Secret", "Love", 2017, "Kadın", "Çiçeksi Ferah", ["ardıç", "kayısı", "pamuk"], ["Yaz", "İlkbahar"], ["Ardıç", "Kayısı"], ["Pamuk çiçeği"], ["Misk"], 2, 2, "2-4 saat"],
+
+  ["Bvlgari", "Pour Homme", 1996, "Erkek", "Odunsu Çiçeksi Misk", ["çay", "misk", "lavanta"], ["Dört Mevsim"], ["Çay", "Bergamot", "Lavanta"], ["Biber", "Kişniş", "İris"], ["Misk", "Sedir", "Tonka"], 4, 3, "5-7 saat"],
+  ["Bvlgari", "Pour Homme Extreme", 1999, "Erkek", "Odunsu Aromatik", ["çay", "greyfurt", "misk"], ["Yaz", "İlkbahar"], ["Greyfurt", "Çay", "Bergamot"], ["Biber", "Guaiac", "Kişniş"], ["Misk", "Vetiver", "Sedir"], 4, 3, "5-7 saat"],
+  ["Bvlgari", "BLV Pour Homme", 2001, "Erkek", "Odunsu Baharatlı", ["zencefil", "tütün", "sandal"], ["Sonbahar", "Dört Mevsim"], ["Zencefil", "Kakule"], ["Tütün çiçeği", "Ardıç", "Galanga"], ["Sandal", "Sedir", "Misk"], 4, 3, "5-7 saat"],
+  ["Bvlgari", "Black", 1998, "Unisex", "Deri", ["kauçuk", "vanilya", "deri"], ["Kış", "Sonbahar"], ["Yeşil çay", "Bergamot", "Gül"], ["Sedir", "Sandal", "Yasemin"], ["Deri", "Vanilya", "Amber", "Misk"], 5, 4, "8-10 saat"],
+  ["Bvlgari", "Aqva Marine", 2008, "Erkek", "Akuatik Aromatik", ["deniz", "neroli", "greyfurt"], ["Yaz", "İlkbahar"], ["Greyfurt", "Neroli", "Mandalina"], ["Deniz yosunu", "Biberiye", "Su notaları"], ["Sedir", "Amber"], 3, 3, "4-6 saat"],
+  ["Bvlgari", "Aqva Amara", 2014, "Erkek", "Odunsu Akuatik", ["mandalina", "neroli", "tütsü"], ["Yaz", "İlkbahar"], ["Mandarin"], ["Neroli", "Su notaları"], ["Tütsü", "Paçuli"], 4, 4, "6-8 saat"],
+  ["Bvlgari", "Man Wood Essence", 2018, "Erkek", "Odunsu", ["narenciye", "selvi", "vetiver"], ["İlkbahar", "Sonbahar"], ["Narenciye", "Kişniş"], ["Selvi", "Vetiver", "Sedir"], ["Benzoin"], 4, 3, "5-7 saat"],
+  ["Bvlgari", "Man Glacial Essence", 2020, "Erkek", "Aromatik Fırtınalı", ["ardıç", "zencefil", "misk"], ["Yaz", "İlkbahar"], ["Ardıç", "Zencefil", "Sardunya"], ["Sandal", "Artemisia", "İris"], ["Misk", "Sedir", "Clearwood"], 4, 3, "5-7 saat"],
+  ["Bvlgari", "Omnia Amethyste", 2006, "Kadın", "Çiçeksi Odunsu", ["iris", "gül", "yeşil"], ["İlkbahar", "Yaz"], ["Yeşil notalar", "Pembe greyfurt"], ["İris", "Bulgar gülü"], ["Heliotrope", "Odunsu notalar"], 3, 3, "4-6 saat"],
+  ["Bvlgari", "Omnia Coral", 2012, "Kadın", "Çiçeksi Meyveli", ["hibiskus", "nar", "misk"], ["Yaz", "İlkbahar"], ["Bergamot", "Goji berry"], ["Hibiskus", "Nilüfer", "Nar"], ["Misk", "Sedir"], 3, 3, "4-6 saat"],
+  ["Bvlgari", "Rose Goldea", 2016, "Kadın", "Çiçeksi Misk", ["gül", "misk", "nar"], ["İlkbahar", "Sonbahar"], ["Nar", "Misk", "Gül yaprakları"], ["Şam gülü", "Yasemin", "Şeftali"], ["Misk", "Sandal", "Tütsü"], 4, 3, "5-7 saat"],
+
+  ["Paco Rabanne", "Lady Million", 2010, "Kadın", "Çiçeksi Meyveli", ["bal", "beyaz çiçek", "paçuli"], ["Sonbahar", "Kış"], ["Ahududu", "Neroli", "Limon"], ["Yasemin", "Portakal çiçeği", "Gardenya"], ["Bal", "Paçuli", "Amber"], 5, 4, "7-9 saat"],
+  ["Paco Rabanne", "Olympea", 2015, "Kadın", "Amber Çiçeksi", ["tuz", "vanilya", "yasemin"], ["Yaz", "Sonbahar"], ["Yeşil mandalina", "Yasemin", "Zencefil çiçeği"], ["Tuz", "Vanilya"], ["Ambergris", "Sandal", "Kaşmir ağacı"], 5, 4, "7-9 saat"],
+  ["Paco Rabanne", "Pure XS", 2017, "Erkek", "Amber Baharatlı", ["zencefil", "vanilya", "likör"], ["Kış", "Sonbahar"], ["Zencefil", "Kekik", "Bergamot"], ["Tarçın", "Vanilya", "Likör"], ["Mür", "Sedir", "Şeker"], 4, 4, "6-8 saat"],
+  ["Paco Rabanne", "Pure XS For Her", 2018, "Kadın", "Amber Çiçeksi", ["patlamış mısır", "vanilya", "ylang"], ["Kış", "Sonbahar"], ["Ylang-ylang", "Şeftali", "Portakal çiçeği"], ["Patlamış mısır", "Hindistan cevizi", "Ambrette"], ["Vanilya", "Sandal", "Amberwood"], 4, 4, "6-8 saat"],
+  ["Paco Rabanne", "Black XS", 2005, "Erkek", "Amber Odunsu", ["pralin", "limon", "paçuli"], ["Sonbahar", "Kış"], ["Limon", "Adaçayı"], ["Pralin", "Tarçın", "Siyah kakule"], ["Paçuli", "Amber", "Gül ağacı"], 4, 4, "6-8 saat"],
+  ["Paco Rabanne", "Black XS for Her", 2007, "Kadın", "Çiçeksi Odunsu Misk", ["kızılcık", "kakao", "vanilya"], ["Sonbahar", "Kış"], ["Kızılcık", "Pembe biber", "Tamarind"], ["Kakao", "Gül", "Menekşe"], ["Vanilya", "Paçuli", "Misk"], 4, 4, "6-8 saat"],
+  ["Paco Rabanne", "1 Million Lucky", 2018, "Erkek", "Odunsu", ["fındık", "bal", "erik"], ["Sonbahar", "Kış"], ["Ozonik notalar", "Greyfurt", "Erik"], ["Fındık", "Bal", "Sedir"], ["Paçuli", "Vetiver", "Meşe yosunu"], 5, 4, "7-9 saat"],
+  ["Paco Rabanne", "Invictus Aqua", 2016, "Erkek", "Odunsu Akuatik", ["deniz", "greyfurt", "ambergris"], ["Yaz", "İlkbahar"], ["Yuzu", "Greyfurt", "Pembe biber"], ["Deniz notaları", "Menekşe yaprağı"], ["Ambergris", "Guaiac", "Amberwood"], 4, 4, "6-8 saat"],
+  ["Paco Rabanne", "Ultraviolet Man", 2001, "Erkek", "Amber Odunsu", ["nane", "amber", "vetiver"], ["Sonbahar", "Dört Mevsim"], ["Nane", "Amber"], ["Biber", "Vetiver"], ["Meşe yosunu", "Vanilya"], 4, 3, "5-7 saat"],
+  ["Rabanne", "Fame", 2022, "Kadın", "Çiçeksi Odunsu Misk", ["mango", "yasemin", "tütsü"], ["Yaz", "İlkbahar"], ["Mango", "Bergamot"], ["Yasemin", "Tütsü"], ["Vanilya", "Sandal"], 4, 3, "5-7 saat"],
+
+  ["Tom Ford", "Noir", 2012, "Erkek", "Amber Odunsu", ["baharat", "iris", "amber"], ["Sonbahar", "Kış"], ["Bergamot", "Mine çiçeği", "Karabiber"], ["İris", "Kakule", "Muskat", "Gül"], ["Amber", "Vanilya", "Deri", "Vetiver"], 4, 4, "6-8 saat"],
+  ["Tom Ford", "Grey Vetiver", 2009, "Erkek", "Odunsu Baharatlı", ["vetiver", "greyfurt", "baharat"], ["Dört Mevsim"], ["Greyfurt", "Portakal çiçeği", "Adaçayı"], ["Muskat", "Orris", "Kırmızı biber"], ["Vetiver", "Amberwood", "Meşe yosunu"], 4, 3, "5-7 saat"],
+  ["Tom Ford", "Beau de Jour", 2019, "Erkek", "Aromatik Fırtınalı", ["lavanta", "paçuli", "amber"], ["Dört Mevsim"], ["Lavanta", "Lavandin"], ["Biberiye", "Nane", "Fesleğen"], ["Paçuli", "Amber", "Meşe yosunu"], 4, 3, "6-8 saat"],
+  ["Tom Ford", "Costa Azzurra", 2014, "Unisex", "Odunsu Aromatik", ["deniz", "selvi", "odunsu"], ["Yaz", "İlkbahar"], ["Deniz yosunu", "Dalgıç otu", "Driftwood"], ["Selvi", "Lavanta", "Mersin"], ["Olibanum", "Vanilya", "Meşe"], 4, 3, "5-7 saat"],
+  ["Tom Ford", "Soleil Blanc", 2016, "Unisex", "Amber Çiçeksi", ["hindistan cevizi", "beyaz çiçek", "amber"], ["Yaz", "İlkbahar"], ["Bergamot", "Kakule", "Pembe biber"], ["Ylang-ylang", "Tuberose", "Yasemin"], ["Hindistan cevizi", "Amber", "Tonka"], 4, 3, "5-7 saat"],
+  ["Tom Ford", "Tuscan Leather", 2007, "Unisex", "Deri", ["deri", "ahududu", "süet"], ["Kış", "Sonbahar"], ["Ahududu", "Safran", "Kekik"], ["Olibanum", "Yasemin"], ["Deri", "Süet", "Amber", "Odunsu notalar"], 5, 5, "10-12+ saat"],
+  ["Tom Ford", "White Suede", 2009, "Unisex", "Çiçeksi Odunsu Misk", ["süet", "misk", "gül"], ["Sonbahar", "Dört Mevsim"], ["Kekik", "Çay"], ["Gül", "Safran", "Müge"], ["Süet", "Misk", "Sandal"], 4, 3, "5-7 saat"],
+  ["Tom Ford", "Rose Prick", 2020, "Unisex", "Chypre Çiçeksi", ["gül", "paçuli", "biber"], ["Sonbahar", "İlkbahar"], ["Sichuan biberi", "Zerdeçal"], ["Mayıs gülü", "Bulgar gülü", "Türk gülü"], ["Paçuli", "Tonka"], 4, 4, "6-8 saat"],
+  ["Tom Ford", "Ébène Fumé", 2021, "Unisex", "Odunsu Amber", ["palo santo", "tütsü", "deri"], ["Kış", "Sonbahar"], ["Tütsü", "Palo santo", "Karabiber"], ["Deri", "Labdanum", "Menekşe yaprağı"], ["Ebony wood", "Reçine", "Guaiac"], 5, 4, "8-10 saat"],
+  ["Tom Ford", "Myrrhe Mystere", 2023, "Unisex", "Amber Vanilya", ["mür", "vanilya", "süet"], ["Kış", "Sonbahar"], ["Mür", "Vanilya"], ["Süet", "Sandal"], ["Amber", "Misk"], 5, 4, "8-10 saat"],
+  ["Tom Ford", "Electric Cherry", 2023, "Unisex", "Çiçeksi Meyveli", ["kiraz", "zencefil", "misk"], ["İlkbahar", "Yaz"], ["Vişne", "Zencefil"], ["Yasemin sambac"], ["Misk", "Pembe biber"], 3, 3, "4-6 saat"],
+  ["Tom Ford", "Cherry Smoke", 2022, "Unisex", "Deri Meyveli", ["vişne", "duman", "deri"], ["Kış", "Sonbahar"], ["Vişne", "Safran"], ["Deri", "Osmanthus", "Zeytin"], ["Odunsu notalar", "Duman", "Amber"], 5, 4, "8-10 saat"],
+  ["Tom Ford", "Vanilla Sex", 2023, "Unisex", "Amber Vanilya", ["vanilya", "badem", "sandal"], ["Kış", "Sonbahar"], ["Acı badem"], ["Vanilya", "Çiçeksi notalar"], ["Sandal", "Tonka", "Vanilya absolute"], 4, 4, "6-8 saat"],
+  ["Tom Ford", "Cafe Rose", 2012, "Unisex", "Chypre Çiçeksi", ["gül", "kahve", "paçuli"], ["Sonbahar", "Kış"], ["Safran", "Karabiber", "Mayıs gülü"], ["Türk gülü", "Bulgar gülü", "Kahve"], ["Paçuli", "Tütsü", "Sandal"], 4, 4, "6-8 saat"],
+
+  ["Creed", "Millesime Imperial", 1995, "Unisex", "Narenciye Deniz", ["tuz", "meyveli", "misk"], ["Yaz", "İlkbahar"], ["Meyveli notalar", "Deniz tuzu"], ["Sicilya limonu", "Bergamot", "Mandalina"], ["Misk", "Odunsu notalar", "Deniz notaları"], 3, 3, "4-6 saat"],
+  ["Creed", "Viking", 2017, "Erkek", "Odunsu Aromatik", ["nane", "gül", "baharat"], ["Sonbahar", "Dört Mevsim"], ["Pembe biber", "Bergamot", "Limon"], ["Nane", "Gül", "Baharatlar"], ["Vetiver", "Sandal", "Lavanta"], 4, 4, "6-8 saat"],
+  ["Creed", "Royal Oud", 2011, "Unisex", "Amber Fırtınalı", ["sedir", "oud", "baharat"], ["Sonbahar", "Kış"], ["Limon", "Pembe biber", "Bergamot"], ["Sedir", "Angelica", "Galbanum"], ["Oud", "Sandal", "Misk"], 4, 3, "6-8 saat"],
+  ["Creed", "Original Vetiver", 2004, "Erkek", "Odunsu Baharatlı", ["vetiver", "zencefil", "misk"], ["Yaz", "İlkbahar"], ["Bergamot", "Acı portakal", "Mandalina"], ["Vetiver", "Zencefil", "Kişniş"], ["Misk", "Ambergris", "Sandal"], 3, 3, "4-6 saat"],
+  ["Creed", "Original Santal", 2005, "Unisex", "Amber Odunsu", ["sandal", "tarçın", "vanilya"], ["Sonbahar", "Kış"], ["Zencefil", "Ardıç", "Kişniş"], ["Sandal", "Lavanta", "Biberiye"], ["Vanilya", "Tonka", "Sedir"], 4, 3, "5-7 saat"],
+  ["Creed", "Himalaya", 2002, "Erkek", "Amber Odunsu", ["narenciye", "misk", "sandal"], ["Dört Mevsim"], ["Greyfurt", "Bergamot", "Limon"], ["Sandal"], ["Misk", "Ambergris", "Sedir"], 3, 3, "4-6 saat"],
+  ["Creed", "Virgin Island Water", 2007, "Unisex", "Narenciye Tropikal", ["hindistan cevizi", "lime", "rom"], ["Yaz"], ["Lime", "Hindistan cevizi", "Mandalina"], ["Zencefil", "Ylang-ylang", "Yasemin"], ["Rom", "Şeker", "Misk"], 3, 3, "4-6 saat"],
+  ["Creed", "Aventus Cologne", 2018, "Erkek", "Aromatik Meyveli", ["mandalina", "misk", "huş"], ["Yaz", "İlkbahar"], ["Mandarin", "Zencefil", "Pembe biber"], ["Paçuli", "Vetiver", "Sandal"], ["Misk", "Huş", "Styrax"], 4, 3, "5-7 saat"],
+  ["Creed", "Love in White", 2005, "Kadın", "Amber Çiçeksi", ["pirinç", "çiçeksi", "vanilya"], ["İlkbahar", "Yaz"], ["Portakal kabuğu"], ["Pirinç", "İris", "Nergis", "Yasemin"], ["Vanilya", "Ambergris", "Sandal"], 4, 3, "5-7 saat"],
+  ["Creed", "Spring Flower", 1996, "Kadın", "Çiçeksi Meyveli", ["elma", "şeftali", "misk"], ["İlkbahar", "Yaz"], ["Elma", "Kavun", "Şeftali"], ["Yasemin", "Gül"], ["Misk", "Ambergris"], 3, 3, "4-6 saat"],
+  ["Creed", "Carmina", 2023, "Kadın", "Amber Çiçeksi", ["siyah kiraz", "gül", "safran"], ["Sonbahar", "Kış"], ["Siyah kiraz", "Safran", "Pembe biber"], ["Mayıs gülü", "Şakayık", "Menekşe"], ["Misk", "Ambroxan", "Mür"], 4, 4, "6-8 saat"],
+  ["Creed", "Absolu Aventus", 2023, "Erkek", "Chypre Meyveli", ["greyfurt", "ananas", "duman"], ["Sonbahar", "Kış"], ["Greyfurt", "Bergamot", "Frenk üzümü"], ["Ananas", "Zencefil", "Tarçın"], ["Huş", "Paçuli", "Ambroxan"], 5, 4, "8-10 saat"],
+
+  ["Gucci", "Gucci Rush", 1999, "Kadın", "Chypre Meyveli", ["şeftali", "paçuli", "gardenya"], ["Sonbahar", "Kış"], ["Şeftali", "Gardenya", "Frezya"], ["Kişniş", "Gül", "Yasemin"], ["Paçuli", "Vanilya", "Vetiver"], 4, 4, "6-8 saat"],
+  ["Gucci", "Memoire d'une Odeur", 2019, "Unisex", "Aromatik", ["papatya", "badem", "misk"], ["İlkbahar", "Dört Mevsim"], ["Roma papatyası", "Acı badem"], ["Misk", "Yasemin"], ["Sandal", "Sedir", "Vanilya"], 3, 3, "4-6 saat"],
+  ["Gucci", "Flora Gorgeous Magnolia", 2023, "Kadın", "Çiçeksi", ["manolya", "böğürtlen", "paçuli"], ["İlkbahar", "Yaz"], ["Çiy böğürtlen"], ["Manolya", "Yasemin sambac"], ["Paçuli", "Misk"], 3, 3, "4-6 saat"],
+  ["Gucci", "Gucci Guilty Absolute", 2017, "Erkek", "Deri Odunsu", ["deri", "selvi", "vetiver"], ["Kış", "Sonbahar"], ["Deri"], ["Selvi", "Paçuli"], ["Vetiver", "Odunsu notalar"], 5, 4, "8-10 saat"],
+  ["Gucci", "Guilty Black Pour Homme", 2013, "Erkek", "Aromatik Fırtınalı", ["yeşil", "lavanta", "paçuli"], ["Sonbahar", "Dört Mevsim"], ["Yeşil kişniş", "Lavanta"], ["Portakal çiçeği", "Neroli"], ["Paçuli", "Sedir"], 4, 3, "5-7 saat"],
+  ["Gucci", "Guilty Black Pour Femme", 2013, "Kadın", "Amber Çiçeksi", ["kırmızı meyve", "şeftali", "paçuli"], ["Sonbahar", "İlkbahar"], ["Kırmızı meyveler", "Pembe biber"], ["Ahududu", "Şeftali", "Leylak"], ["Paçuli", "Amber"], 4, 3, "5-7 saat"],
+  ["Gucci", "Intense Oud", 2016, "Unisex", "Amber Odunsu", ["oud", "tütsü", "deri"], ["Kış", "Sonbahar"], ["Oud", "Tütsü"], ["Amber", "Olibanum"], ["Deri", "Odunsu notalar"], 5, 4, "8-10 saat"],
+
+  ["Burberry", "Brit for Her", 2003, "Kadın", "Amber Vanilya", ["badem", "lime", "vanilya"], ["Sonbahar", "Kış"], ["Lime", "Armut", "Badem"], ["Şeker", "Şakayık", "Badem"], ["Vanilya", "Tonka", "Maun"], 4, 3, "5-7 saat"],
+  ["Burberry", "Brit Rhythm for Him", 2013, "Erkek", "Deri Aromatik", ["deri", "lavanta", "tonka"], ["Sonbahar", "Dört Mevsim"], ["Fesleğen", "Kakule", "Ardıç"], ["Deri", "Paçuli", "Styrax"], ["Tonka", "Sedir", "Tütsü"], 4, 3, "5-7 saat"],
+  ["Burberry", "Mr. Burberry", 2016, "Erkek", "Odunsu Aromatik", ["greyfurt", "tarhun", "vetiver"], ["Dört Mevsim"], ["Greyfurt", "Tarhun", "Kakule"], ["Huş yaprağı", "Muskat", "Sedir"], ["Vetiver", "Guaiac", "Sandal"], 4, 3, "5-7 saat"],
+  ["Burberry", "Mr. Burberry Indigo", 2018, "Erkek", "Odunsu Aromatik", ["limon", "nane", "meşe"], ["Yaz", "İlkbahar"], ["Limon", "Biberiye", "Bergamot"], ["Nane", "Menekşe", "Deniz notaları"], ["Meşe yosunu", "Amber", "Misk"], 3, 3, "4-6 saat"],
+  ["Burberry", "London for Women", 2006, "Kadın", "Çiçeksi", ["hanımeli", "yasemin", "gül"], ["İlkbahar", "Sonbahar"], ["Hanımeli", "Mandalina", "Gül"], ["Yasemin", "Tiare", "Şakayık"], ["Misk", "Sandal", "Paçuli"], 4, 3, "5-7 saat"],
+  ["Burberry", "Touch for Men", 2000, "Erkek", "Odunsu Çiçeksi Misk", ["menekşe", "biber", "misk"], ["Dört Mevsim"], ["Artemisia", "Menekşe yaprağı", "Mandarin"], ["Beyaz biber", "Sedir", "Muskat"], ["Misk", "Tonka", "Vetiver"], 4, 3, "5-7 saat"],
+  ["Burberry", "Touch for Women", 1998, "Kadın", "Çiçeksi Yeşil", ["frenk üzümü", "şeftali", "vanilya"], ["İlkbahar", "Yaz"], ["Frenk üzümü", "Portakal", "Gül"], ["Şeftali", "Yasemin", "Zambak"], ["Vanilya", "Sedir", "Meşe yosunu"], 3, 3, "4-6 saat"],
+  ["Burberry", "My Burberry", 2014, "Kadın", "Çiçeksi", ["bezelye çiçeği", "gül", "paçuli"], ["İlkbahar", "Sonbahar"], ["Bezelye çiçeği", "Bergamot", "Mandalina"], ["Ayva", "Frezya", "Geranium"], ["Gül", "Paçuli"], 4, 3, "5-7 saat"],
+  ["Burberry", "My Burberry Black", 2016, "Kadın", "Amber Çiçeksi", ["gül", "şeftali", "amber"], ["Sonbahar", "Kış"], ["Yasemin"], ["Şeftali", "Gül"], ["Amber", "Paçuli"], 5, 4, "7-9 saat"],
+  ["Burberry", "Hero Parfum", 2024, "Erkek", "Odunsu Baharatlı", ["sedir", "amyris", "cypriol"], ["Sonbahar", "Kış"], ["Amyris"], ["Sedir", "Cypriol"], ["Sedir ağacı yağları"], 5, 4, "8-10 saat"],
+
+  ["Maison Crivelli", "Oud Maracuja", 2023, "Unisex", "Oud Meyveli", ["çarkıfelek", "oud", "deri"], ["Kış", "Sonbahar"], ["Çarkıfelek", "Safran"], ["Türk gülü", "Oud", "Benzoin"], ["Deri", "Paçuli", "Vanilya", "Akigalawood"], 5, 5, "10-12+ saat"],
+  ["Maison Crivelli", "Tubereuse Astrale", 2023, "Unisex", "Beyaz Çiçeksi Amber", ["tuberose", "tarçın", "misk"], ["Sonbahar", "Kış"], ["Tarçın", "Osmanthus"], ["Tuberose", "Sümbül", "Davana"], ["Misk", "Vanilya", "Amber"], 5, 4, "8-10 saat"],
+  ["Maison Crivelli", "Iris Malikhan", 2020, "Unisex", "Deri Pudralı", ["iris", "deri", "vanilya"], ["Sonbahar", "Kış"], ["Galbanum", "Mimoza"], ["İris", "Deri", "Sedir"], ["Vanilya", "Benzoin", "Misk"], 5, 4, "8-10 saat"],
+  ["Maison Crivelli", "Santal Volcanique", 2018, "Unisex", "Odunsu Baharatlı", ["sandal", "kahve", "kakule"], ["Sonbahar", "Dört Mevsim"], ["Kakule", "Kahve"], ["Sandal", "Zencefil"], ["Misk", "Amber", "Odunsu notalar"], 4, 3, "6-8 saat"],
+  ["Maison Crivelli", "Absinthe Boreale", 2019, "Unisex", "Aromatik Yeşil", ["absinthe", "lavanta", "misk"], ["İlkbahar", "Dört Mevsim"], ["Absinthe", "Lavanta"], ["Nane", "Okaliptüs"], ["Misk", "Odunsu notalar"], 4, 3, "5-7 saat"],
+  ["Maison Crivelli", "Papyrus Moleculaire", 2020, "Unisex", "Odunsu Baharatlı", ["papirüs", "tütün", "susam"], ["Sonbahar", "Dört Mevsim"], ["Kişniş", "Susam"], ["Papirüs", "Tütün"], ["Odunsu notalar", "Misk"], 4, 3, "6-8 saat"],
+  ["Maison Crivelli", "Rose Saltifolia", 2018, "Unisex", "Çiçeksi Deniz", ["gül", "tuz", "yosun"], ["Yaz", "İlkbahar"], ["Deniz tuzu", "Bergamot"], ["Gül", "Yosun"], ["Ambergris", "Misk"], 3, 3, "4-6 saat"],
+  ["Maison Crivelli", "Lys Solaberg", 2021, "Unisex", "Amber Çiçeksi", ["zambak", "ayva", "tütün"], ["Sonbahar", "İlkbahar"], ["Ayva", "Ambroxan"], ["Zambak", "Tütün"], ["Meşe yosunu", "Misk"], 4, 3, "6-8 saat"],
+  ["Maison Crivelli", "Neroli Nasimba", 2019, "Unisex", "Beyaz Çiçeksi", ["neroli", "safran", "deri"], ["İlkbahar", "Yaz"], ["Neroli", "Mandarin"], ["Portakal çiçeği", "Safran"], ["Deri", "Vetiver", "Misk"], 4, 3, "5-7 saat"],
+  ["Maison Crivelli", "Oud Stallion", 2023, "Unisex", "Deri Oud", ["oud", "deri", "kakule"], ["Kış", "Sonbahar"], ["Kakule", "Safran"], ["Oud", "Deri", "Gül"], ["Paçuli", "Amber", "Misk"], 5, 5, "10-12+ saat"],
+
+  ["Cacharel", "Anais Anais", 1978, "Kadın", "Çiçeksi", ["beyaz çiçek", "zambak", "yeşil"], ["İlkbahar", "Yaz"], ["Portakal çiçeği", "Lavanta", "Sümbül"], ["Zambak", "Yasemin", "Gül", "Ylang-ylang"], ["Sandal", "Tütsü", "Misk", "Vetiver"], 4, 3, "5-7 saat"],
+  ["Cacharel", "LouLou", 1987, "Kadın", "Amber Çiçeksi", ["tuberose", "tütsü", "vanilya"], ["Kış", "Sonbahar"], ["Erik", "Frenk üzümü", "Kadife çiçeği"], ["Tuberose", "Ylang-ylang", "Portakal çiçeği"], ["Tütsü", "Vanilya", "Sandal", "Misk"], 5, 4, "8-10 saat"],
+  ["Cacharel", "Eden", 1994, "Kadın", "Çiçeksi", ["yeşil", "nilüfer", "paçuli"], ["İlkbahar", "Sonbahar"], ["Narenciye", "Şeftali", "Bergamot"], ["Nilüfer", "Mimoza", "Tuberose"], ["Paçuli", "Sedir", "Sandal", "Tonka"], 5, 4, "7-9 saat"],
+  ["Cacharel", "Noa", 1998, "Kadın", "Çiçeksi Odunsu Misk", ["misk", "kahve", "şakayık"], ["Dört Mevsim"], ["Beyaz misk", "Şakayık", "Frezya"], ["Zambak", "Yasemin", "Ylang-ylang"], ["Kahve", "Tütsü", "Sandal", "Vanilya"], 4, 3, "5-7 saat"],
+  ["Cacharel", "Amor Amor", 2003, "Kadın", "Çiçeksi Meyveli", ["frenk üzümü", "portakal", "vanilya"], ["İlkbahar", "Yaz"], ["Frenk üzümü", "Portakal", "Mandarin"], ["Yasemin", "Gül", "Zambak"], ["Vanilya", "Tonka", "Sedir", "Misk"], 4, 4, "6-8 saat"],
+  ["Cacharel", "Cacharel Pour L'Homme", 1981, "Erkek", "Odunsu Baharatlı", ["muskat", "lavanta", "köknar"], ["Sonbahar", "Dört Mevsim"], ["Muskat", "Lavanta", "Bergamot"], ["Karanfil", "Ylang-ylang", "Sardunya"], ["Köknar", "Sandal", "Sedir", "Amber"], 4, 3, "5-7 saat"],
+  ["Cacharel", "Yes I Am", 2018, "Kadın", "Amber Çiçeksi", ["ahududu", "süt", "kakule"], ["Sonbahar", "Kış"], ["Ahududu", "Mandalina", "Bergamot"], ["Gardenya", "Zencefil çiçeği", "Yasemin"], ["Süt", "Kakule", "Sandal", "Karamel"], 4, 3, "5-7 saat"],
+  ["Cacharel", "Liberte", 2007, "Kadın", "Chypre Çiçeksi", ["portakal", "paçuli", "vanilya"], ["Sonbahar", "İlkbahar"], ["Portakal", "Mandalina", "Bergamot"], ["Beyaz çiçekler", "Frangipani"], ["Paçuli", "Vanilya", "Vetiver"], 4, 3, "5-7 saat"],
+  ["Cacharel", "Scarlett", 2009, "Kadın", "Çiçeksi Odunsu Misk", ["çay", "yasemin", "misk"], ["İlkbahar", "Yaz"], ["Çay", "Limon", "Armut"], ["Yasemin", "Portakal çiçeği", "Hanımeli"], ["Misk", "Sandal", "Bal"], 3, 3, "4-6 saat"],
+  ["Cacharel", "Anais Anais Premier Delice", 2014, "Kadın", "Çiçeksi Meyveli", ["armut", "portakal", "kakao"], ["İlkbahar", "Yaz"], ["Armut", "Portakal", "Bergamot"], ["Şakayık", "Sümbül"], ["Kakao", "Sedir"], 3, 3, "4-6 saat"],
+
+  ["Amouage", "Epic Man", 2009, "Erkek", "Amber Odunsu", ["oud", "tütsü", "baharat"], ["Kış", "Sonbahar"], ["Karabiber", "Kakule", "Safran"], ["Mür", "Geranium"], ["Oud", "Tütsü", "Deri", "Paçuli"], 5, 5, "10-12+ saat"],
+  ["Amouage", "Epic Woman", 2009, "Kadın", "Amber Çiçeksi", ["gül", "tütsü", "oud"], ["Kış", "Sonbahar"], ["Kimyon", "Tarçın", "Pembe defne"], ["Gül", "Yasemin", "Çay"], ["Oud", "Tütsü", "Amber", "Vanilya"], 5, 5, "10-12+ saat"],
+  ["Amouage", "Jubilation XXV Man", 2008, "Erkek", "Amber Fırtınalı", ["bal", "tütsü", "böğürtlen"], ["Kış", "Sonbahar"], ["Böğürtlen", "Kişniş", "Portakal"], ["Bal", "Tarçın", "Karanfil"], ["Oud", "Tütsü", "Mür", "Paçuli"], 5, 5, "10-12+ saat"],
+  ["Amouage", "Jubilation 25 Woman", 2007, "Kadın", "Amber Çiçeksi", ["gül", "ylang", "misk"], ["Sonbahar", "Kış"], ["Tarhun", "Ylang-ylang", "Gül"], ["Tütsü", "Reçine", "Artemisia"], ["Amber", "Misk", "Mür", "Paçuli"], 5, 4, "8-10 saat"],
+  ["Amouage", "Memoir Man", 2010, "Erkek", "Deri Odunsu", ["absinthe", "tütün", "deri"], ["Kış", "Sonbahar"], ["Absinthe", "Fesleğen", "Nane"], ["Tütsü", "Gül", "Lavanta"], ["Deri", "Tütün", "Vanilya", "Misk"], 5, 5, "10-12+ saat"],
+  ["Amouage", "Memoir Woman", 2010, "Kadın", "Chypre", ["absinthe", "tütsü", "deri"], ["Kış", "Sonbahar"], ["Absinthe", "Kakule", "Mandarin"], ["Tütsü", "Biber", "Karanfil"], ["Deri", "Misk", "Meşe yosunu", "Styrax"], 5, 5, "10-12+ saat"],
+  ["Amouage", "Lyric Man", 2008, "Erkek", "Gül Amber", ["gül", "tütsü", "misk"], ["Sonbahar", "Kış"], ["Bergamot", "Lime"], ["Gül", "Zencefil", "Safran"], ["Tütsü", "Çam", "Misk", "Vanilya"], 5, 4, "8-10 saat"],
+  ["Amouage", "Lyric Woman", 2008, "Kadın", "Amber Çiçeksi", ["gül", "ylang", "tütsü"], ["Sonbahar", "Kış"], ["Bergamot", "Zencefil", "Kakule"], ["Gül", "Ylang-ylang", "Yasemin"], ["Tütsü", "Sandal", "Vanilya", "Misk"], 5, 4, "8-10 saat"],
+  ["Amouage", "Beach Hut Man", 2017, "Erkek", "Odunsu Aromatik", ["nane", "yeşil", "vetiver"], ["Yaz", "İlkbahar"], ["Nane", "Portakal çiçeği", "Galbanum"], ["Vetiver", "Meşe yosunu", "Sarmaşık"], ["Paçuli", "Mür", "Odunsu notalar"], 5, 4, "8-10 saat"],
+  ["Amouage", "Sunshine Man", 2015, "Erkek", "Aromatik Baharatlı", ["lavanta", "brendi", "vanilya"], ["Sonbahar", "Kış"], ["Lavanta", "Portakal", "Brendi"], ["Ardıç", "Adaçayı", "Bergamot"], ["Vanilya", "Tonka", "Sedir"], 4, 4, "6-8 saat"],
+  ["Amouage", "Ashore", 2020, "Unisex", "Amber Çiçeksi", ["yasemin", "amber", "kakule"], ["Yaz", "İlkbahar"], ["Pembe biber", "Kakule", "Zerdeçal"], ["Yasemin sambac", "Gül", "Solar notalar"], ["Ambergris", "Olibanum", "Sandal"], 5, 4, "7-9 saat"],
+  ["Amouage", "Crimson Rocks", 2020, "Unisex", "Amber Baharatlı", ["tarçın", "gül", "bal"], ["Kış", "Sonbahar"], ["Tarçın", "Pembe biber"], ["Gül", "Bal"], ["Meşe", "Vetiver", "Atlas sediri"], 5, 4, "8-10 saat"],
+
+  ["Chanel", "Allure", 1996, "Kadın", "Amber Çiçeksi", ["şeftali", "vanilya", "çiçeksi"], ["İlkbahar", "Sonbahar"], ["Limon", "Bergamot", "Mandarin", "Şeftali"], ["Yasemin", "Gül", "Manolya", "Nilüfer"], ["Vanilya", "Sandal", "Vetiver"], 4, 3, "5-7 saat"],
+  ["Chanel", "Allure Sensuelle", 2005, "Kadın", "Amber Çiçeksi", ["paçuli", "vanilya", "baharat"], ["Sonbahar", "Kış"], ["Pembe biber", "Mandarin", "Bergamot"], ["Gül", "İris", "Yasemin"], ["Paçuli", "Vanilya", "Amber", "Tütsü"], 5, 4, "7-9 saat"],
+  ["Chanel", "Coco", 1984, "Kadın", "Amber Baharatlı", ["karanfil", "amber", "reçine"], ["Kış", "Sonbahar"], ["Kişniş", "Mandarin", "Şeftali"], ["Karanfil", "Gül", "Yasemin", "Mimoza"], ["Amber", "Sandal", "Tütsü", "Vanilya"], 5, 4, "8-10 saat"],
+  ["Chanel", "Coco Noir", 2012, "Kadın", "Amber Odunsu", ["paçuli", "gül", "tütsü"], ["Sonbahar", "Kış"], ["Greyfurt", "Bergamot", "Portakal"], ["Gül", "Yasemin", "Nergis"], ["Paçuli", "Tütsü", "Sandal", "Tonka"], 4, 4, "6-8 saat"],
+  ["Chanel", "Chance Eau Tendre Eau de Toilette", 2010, "Kadın", "Çiçeksi Meyveli", ["greyfurt", "ayva", "misk"], ["Yaz", "İlkbahar"], ["Ayva", "Greyfurt"], ["Sümbül", "Yasemin"], ["Misk", "İris", "Sedir"], 3, 3, "4-6 saat"],
+  ["Chanel", "Chance Eau Vive", 2015, "Kadın", "Çiçeksi Odunsu Misk", ["greyfurt", "yasemin", "vetiver"], ["Yaz", "İlkbahar"], ["Greyfurt", "Kan portakalı"], ["Yasemin", "Beyaz misk"], ["Vetiver", "İris", "Sedir"], 3, 3, "4-6 saat"],
+  ["Chanel", "Paris-Biarritz", 2018, "Kadın", "Narenciye Aromatik", ["mandalina", "zambak", "misk"], ["Yaz", "İlkbahar"], ["Mandalina", "Bergamot", "Portakal"], ["Müge", "Neroli"], ["Beyaz misk", "Paçuli"], 3, 2, "3-5 saat"],
+  ["Chanel", "Paris-Deauville", 2018, "Unisex", "Aromatik Yeşil", ["portakal", "fesleğen", "gül"], ["Yaz", "İlkbahar"], ["Portakal", "Bergamot", "Limon"], ["Fesleğen", "Gül"], ["Paçuli"], 3, 2, "3-5 saat"],
+  ["Chanel", "Coromandel", 2007, "Unisex", "Amber Odunsu", ["paçuli", "benzoin", "tütsü"], ["Kış", "Sonbahar"], ["Acı portakal", "Neroli"], ["Paçuli", "Gül", "Yasemin"], ["Benzoin", "Tütsü", "Amber", "Vanilya"], 5, 4, "8-10 saat"],
+  ["Chanel", "Le Lion de Chanel", 2020, "Unisex", "Amber", ["labdanum", "amber", "vanilya"], ["Kış", "Sonbahar"], ["Bergamot", "Limon"], ["Labdanum", "Amber"], ["Vanilya", "Paçuli", "Sandal", "Misk"], 5, 4, "8-10 saat"],
+  ["Chanel", "Cuir de Russie", 1924, "Unisex", "Deri", ["deri", "iris", "tütün"], ["Kış", "Sonbahar"], ["Mandarin", "Bergamot", "Portakal çiçeği"], ["Yasemin", "Gül", "Ylang-ylang"], ["Deri", "Tütün", "Huş", "Vanilya"], 4, 3, "6-8 saat"],
+  ["Chanel", "Bois des Iles", 1926, "Unisex", "Amber Odunsu", ["sandal", "aldehit", "amber"], ["Sonbahar", "Kış"], ["Aldehitler", "Bergamot"], ["Ylang-ylang", "Yasemin", "Gül"], ["Sandal", "Benzoin", "Vanilya", "Tonka"], 4, 3, "6-8 saat"],
+
+  ["Kayali", "Lovefest Burning Cherry 48", 2022, "Unisex", "Amber Meyveli", ["vişne", "paçuli", "pralin"], ["Sonbahar", "Kış"], ["Vişne", "Ahududu", "Bergamot"], ["Pralin", "Heliotrope", "Gül"], ["Paçuli", "Guaiac", "Tonka"], 4, 4, "6-8 saat"],
+  ["Kayali", "Utopia Vanilla Coco 21", 2021, "Kadın", "Amber Çiçeksi", ["hindistan cevizi", "vanilya", "beyaz çiçek"], ["Yaz", "İlkbahar"], ["Hindistan cevizi sütü", "Hanımeli", "Armut çiçeği"], ["Yasemin", "Tuberose", "Gardenya"], ["Vanilya", "Sandal", "Misk"], 4, 3, "5-7 saat"],
+  ["Kayali", "Invite Only Amber 23", 2021, "Unisex", "Amber Baharatlı", ["kiraz", "bal", "tütün"], ["Kış", "Sonbahar"], ["Vişne", "Bal", "Tütün yaprağı"], ["Amber reçinesi", "Gül", "Tarçın"], ["Vanilya", "Paçuli", "Oud"], 5, 4, "8-10 saat"],
+  ["Kayali", "Deja Vu White Flower 57", 2018, "Kadın", "Beyaz Çiçeksi", ["gardenya", "yasemin", "vanilya"], ["İlkbahar", "Sonbahar"], ["Nektarin", "Armut", "Gardenya"], ["Hint yasemini", "Tuberose", "Portakal çiçeği"], ["Vanilya", "Paçuli", "Sandal"], 4, 3, "5-7 saat"],
+  ["Kayali", "Musk 12", 2018, "Unisex", "Çiçeksi Misk", ["misk", "lotus", "vanilya"], ["Dört Mevsim"], ["Frezya", "Lotus"], ["Misk", "Yasemin"], ["Vanilya", "Sandal"], 3, 2, "3-5 saat"],
+  ["Kayali", "Sweet Diamond Pink Pepper 25", 2021, "Unisex", "Amber Çiçeksi", ["pembe biber", "gül", "safran"], ["Sonbahar", "Kış"], ["Pembe biber", "Safran", "Bergamot"], ["Bulgar gülü", "Mayıs gülü", "Vanilya orkide"], ["Paçuli", "Sandal", "Misk"], 5, 4, "7-9 saat"],
+  ["Kayali", "Eden Sparkling Lychee 39", 2023, "Kadın", "Meyveli Çiçeksi", ["litchi", "elma", "gül"], ["Yaz", "İlkbahar"], ["Litchi", "Siyah frenk üzümü", "Elma"], ["Gül", "Şakayık", "Menekşe"], ["Şeker", "Misk", "Sandal"], 3, 3, "4-6 saat"],
+  ["Kayali", "Vanilla Royale Sugared Patchouli 64", 2022, "Unisex", "Amber Vanilya", ["vanilya", "paçuli", "rom"], ["Kış", "Sonbahar"], ["Vanilya orkide", "Rom", "Yasemin"], ["Vanilya", "Krem brule", "Deri"], ["Paçuli", "Oud", "Şeker", "Misk"], 5, 4, "8-10 saat"],
+  ["Kayali", "Oudgasm Vanilla Oud 36", 2023, "Unisex", "Amber Odunsu", ["oud", "vanilya", "pralin"], ["Kış", "Sonbahar"], ["Armut", "Safran"], ["Vanilya", "Pralin"], ["Oud", "Amber", "Kaşmir ağacı"], 5, 4, "8-10 saat"],
+  ["Kayali", "Yum Boujee Marshmallow 81", 2024, "Kadın", "Gourmand Meyveli", ["marshmallow", "çilek", "vanilya"], ["İlkbahar", "Sonbahar"], ["Çilek", "Frezya", "Limon"], ["Marshmallow", "Hindistan cevizi", "Elma"], ["Vanilya", "Misk", "Amber"], 4, 3, "5-7 saat"],
+
+  ["Initio", "Blessed Baraka", 2015, "Unisex", "Amber", ["amber", "misk", "sandal"], ["Kış", "Sonbahar"], ["Amber"], ["Beyaz çiçekler", "Sandal"], ["Misk", "Vanilya"], 5, 4, "8-10 saat"],
+  ["Initio", "Rehab", 2018, "Unisex", "Odunsu Aromatik", ["lavanta", "tütün", "sandal"], ["Sonbahar", "Dört Mevsim"], ["Bergamot", "Lavanta"], ["Sedir", "Vetiver", "Paçuli"], ["Sandal", "Misk", "Guaiac"], 5, 4, "8-10 saat"],
+  ["Initio", "High Frequency", 2016, "Unisex", "Çiçeksi", ["manolya", "badem", "hedione"], ["İlkbahar", "Sonbahar"], ["Manolya", "Hedione"], ["Badem", "Yasemin"], ["Misk", "Amber"], 4, 3, "6-8 saat"],
+  ["Initio", "Absolute Aphrodisiac", 2015, "Unisex", "Amber Baharatlı", ["vanilya", "misk", "amber"], ["Kış", "Sonbahar"], ["Beyaz çiçekler"], ["Vanilya", "Amber"], ["Misk", "Kastoreum"], 5, 4, "8-10 saat"],
+  ["Initio", "Addictive Vibration", 2016, "Unisex", "Çiçeksi Meyveli", ["bal", "elma çiçeği", "misk"], ["İlkbahar", "Sonbahar"], ["Elma çiçeği", "Portakal çiçeği"], ["Bal", "Vanilya orkide"], ["Misk", "Amber"], 4, 4, "6-8 saat"],
+  ["Initio", "Psychedelic Love", 2017, "Unisex", "Çiçeksi", ["badem", "heliotrope", "misk"], ["Sonbahar", "Kış"], ["Ylang-ylang", "Bergamot"], ["Heliotrope", "Hedione", "Gül"], ["Mür", "Sandal", "Paçuli"], 5, 4, "8-10 saat"],
+  ["Initio", "Mystic Experience", 2015, "Unisex", "Amber Odunsu", ["kahve", "misk", "vanilya"], ["Kış", "Sonbahar"], ["Kahve", "Misk"], ["Vanilya", "Sandal"], ["Amber", "Misk"], 5, 4, "8-10 saat"],
+  ["Initio", "Oud for Happiness", 2021, "Unisex", "Odunsu Baharatlı", ["zencefil", "oud", "vanilya"], ["Sonbahar", "Kış"], ["Bergamot", "Zencefil"], ["Meyan", "Sedir"], ["Oud", "Vanilya", "Misk"], 5, 4, "8-10 saat"],
+  ["Initio", "Narcotic Delight", 2024, "Unisex", "Amber Vanilya", ["kiraz", "konyak", "vanilya"], ["Kış", "Sonbahar"], ["Vişne", "Pembe biber"], ["Konyak", "Hedione"], ["Vanilya", "Tütün", "Sedir"], 5, 4, "8-10 saat"],
+
+  ["Sospiro", "Vibrato", 2022, "Unisex", "Narenciye Aromatik", ["greyfurt", "zencefil", "misk"], ["Yaz", "İlkbahar"], ["Greyfurt", "Bergamot", "Mandalina", "Zencefil"], ["Manolya", "Gül", "Odunsu notalar"], ["Vetiver", "Paçuli", "Sandal", "Misk"], 5, 4, "7-9 saat"],
+  ["Sospiro", "Basso", 2022, "Unisex", "Odunsu Baharatlı", ["greyfurt", "sandal", "vetiver"], ["Sonbahar", "Dört Mevsim"], ["Greyfurt"], ["Mayflower", "Karanfil", "Labdanum"], ["Sandal", "Vetiver", "Sedir", "Meşe yosunu"], 4, 4, "6-8 saat"],
+  ["Sospiro", "Bel Canto", 2022, "Unisex", "Çiçeksi Odunsu Misk", ["yasemin", "menekşe", "amber"], ["İlkbahar", "Sonbahar"], ["Yasemin", "Narenciye"], ["Pudralı notalar", "Menekşe", "Yeşil notalar"], ["Amber", "Misk", "Sandal", "Vanilya"], 4, 3, "6-8 saat"],
+  ["Sospiro", "Dolce Melodia", 2023, "Unisex", "Gourmand Meyveli", ["meyveli", "vanilya", "misk"], ["İlkbahar", "Sonbahar"], ["Meyveli notalar", "Narenciye"], ["Çiçeksi notalar", "Tatlı notalar"], ["Vanilya", "Misk", "Amber"], 4, 3, "5-7 saat"],
+  ["Sospiro", "Liberto", 2023, "Unisex", "Odunsu Aromatik", ["lavanta", "narenciye", "odunsu"], ["Dört Mevsim"], ["Narenciye", "Lavanta"], ["Baharatlar", "Çiçeksi notalar"], ["Odunsu notalar", "Misk", "Amber"], 4, 3, "5-7 saat"],
+  ["Sospiro", "Prima Donna", 2023, "Unisex", "Çiçeksi", ["gül", "meyveli", "misk"], ["İlkbahar", "Yaz"], ["Meyveli notalar", "Narenciye"], ["Gül", "Yasemin", "Çiçeksi notalar"], ["Misk", "Amber", "Sandal"], 4, 3, "5-7 saat"],
+  ["Sospiro", "Opera Grande", 2023, "Unisex", "Meyveli Amber", ["meyveli", "deri", "vanilya"], ["Sonbahar", "Kış"], ["Meyveli notalar", "Safran"], ["Deri", "Çiçeksi notalar"], ["Vanilya", "Amber", "Misk"], 5, 4, "8-10 saat"],
+  ["Sospiro", "Contralto", 2023, "Unisex", "Amber Odunsu", ["baharat", "amber", "odunsu"], ["Kış", "Sonbahar"], ["Baharatlar", "Narenciye"], ["Amber", "Çiçeksi notalar"], ["Odunsu notalar", "Misk", "Vanilya"], 5, 4, "7-9 saat"],
+
+  ["Xerjoff", "40 Knots", 2012, "Unisex", "Odunsu Deniz", ["deniz", "bal", "sedir"], ["Yaz", "İlkbahar"], ["Deniz notaları", "Yeşil notalar"], ["Tuzlu notalar", "Bal"], ["Sedir", "Odunsu notalar"], 5, 4, "7-9 saat"],
+  ["Xerjoff", "Renaissance", 2011, "Unisex", "Narenciye Aromatik", ["limon", "nane", "misk"], ["Yaz", "İlkbahar"], ["Limon", "Bergamot", "Petitgrain"], ["Nane", "Gül", "Müge"], ["Amber", "Misk", "Sedir"], 4, 4, "6-8 saat"],
+  ["Xerjoff", "Uden", 2009, "Erkek", "Amber Odunsu", ["rom", "kahve", "vanilya"], ["Sonbahar", "Dört Mevsim"], ["Limon", "Greyfurt"], ["Rom", "Kahve", "Guaiac"], ["Vanilya", "Sandal", "Misk"], 4, 3, "6-8 saat"],
+  ["Xerjoff", "More Than Words", 2012, "Unisex", "Amber Odunsu", ["oud", "meyveli", "gül"], ["Kış", "Sonbahar"], ["Meyveli notalar", "Oud"], ["Gül", "Labdanum"], ["Ambergris", "Odunsu notalar"], 5, 4, "8-10 saat"],
+  ["Xerjoff", "Golden Dallah", 2018, "Unisex", "Amber Baharatlı", ["kahve", "tütsü", "baharat"], ["Kış", "Sonbahar"], ["Baharatlar", "Kahve"], ["Tütsü", "Gül", "Kakao"], ["Amber", "Tonka", "Oud"], 5, 4, "8-10 saat"],
+  ["Xerjoff", "Alexandria III", 2019, "Unisex", "Amber Odunsu", ["oud", "gül", "tarçın"], ["Kış", "Sonbahar"], ["Gül ağacı", "Lavanta", "Tarçın"], ["Gül", "Sedir", "Müge"], ["Oud", "Sandal", "Amber", "Vanilya"], 5, 5, "10-12+ saat"],
+  ["Xerjoff", "Starlight", 2019, "Unisex", "Amber Baharatlı", ["kakule", "badem", "tarçın"], ["Kış", "Sonbahar"], ["Kakule", "Bergamot"], ["Badem", "Karanfil", "Tarçın"], ["Amber", "Sedir", "Balsam"], 5, 4, "8-10 saat"],
+  ["Xerjoff", "Ivory Route", 2011, "Unisex", "Amber Baharatlı", ["baharat", "sandal", "fesleğen"], ["Sonbahar", "Kış"], ["Baharatlar", "Fesleğen"], ["Sandal", "Paçuli"], ["Vanilya", "Amber"], 4, 4, "6-8 saat"],
+  ["Xerjoff", "Mefisto", 2009, "Erkek", "Narenciye Aromatik", ["greyfurt", "lavanta", "misk"], ["Yaz", "İlkbahar"], ["Greyfurt", "Bergamot", "Limon"], ["Lavanta", "Gül", "İris"], ["Misk", "Sandal", "Amber"], 3, 3, "4-6 saat"],
+  ["Xerjoff", "Mefisto Gentiluomo", 2018, "Erkek", "Narenciye Aromatik", ["limon", "lavanta", "iris"], ["Yaz", "İlkbahar"], ["Limon", "Bergamot", "Greyfurt"], ["Lavanta", "Menekşe", "İris"], ["Misk", "Sedir", "Amber"], 4, 3, "5-7 saat"],
+  ["Xerjoff", "Kobe", 2009, "Unisex", "Odunsu Çiçeksi Misk", ["portakal", "neroli", "oud"], ["İlkbahar", "Yaz"], ["Portakal", "Bergamot", "Labdanum"], ["Neroli", "Portakal çiçeği", "Petitgrain"], ["Oud", "Ambergris", "Tonka"], 4, 4, "6-8 saat"],
+  ["Xerjoff", "Cruz del Sur II", 2017, "Unisex", "Meyveli", ["mango", "süt", "çiçeksi"], ["Yaz", "İlkbahar"], ["Mango", "Ananas", "Elma çiçeği"], ["Yeşil yapraklar", "Çiçeksi notalar"], ["Süt", "Misk", "Vetiver"], 4, 3, "5-7 saat"],
+  ["Xerjoff", "La Capitale", 2018, "Unisex", "Amber Vanilya", ["çilek", "karamel", "deri"], ["Kış", "Sonbahar"], ["Çilek", "Şeftali", "Labdanum"], ["İran safranı", "Zencefil", "Gül"], ["Karamel", "Vanilya", "Deri", "Oud"], 5, 4, "8-10 saat"],
+  ["Xerjoff", "Tony Iommi Monkey Special", 2021, "Unisex", "Amber Baharatlı", ["rom", "tutku meyvesi", "paçuli"], ["Kış", "Sonbahar"], ["Rom", "Tutku meyvesi", "Bergamot"], ["Tarçın", "Paçuli", "Gül"], ["Karamel", "Vanilya", "Sandal", "Misk"], 5, 4, "8-10 saat"],
+  ["Xerjoff", "Torino22", 2022, "Unisex", "Odunsu Aromatik", ["okaliptüs", "safran", "misk"], ["Sonbahar", "Dört Mevsim"], ["Okaliptüs", "Safran", "Bergamot"], ["Mate", "Adaçayı", "Clary sage"], ["Kuru odunlar", "Misk"], 4, 4, "6-8 saat"],
+  ["Xerjoff", "Torino23", 2023, "Unisex", "Çiçeksi Meyveli", ["bergamot", "gül", "misk"], ["İlkbahar", "Yaz"], ["Bergamot", "Kakule", "Mandarin"], ["Gül", "Yasemin", "Neroli"], ["Misk", "Kaşmir ağacı", "Amber"], 4, 3, "5-7 saat"],
+  ["Xerjoff", "Dama Bianca", 2012, "Kadın", "Amber Çiçeksi", ["kumquat", "vanilya", "misk"], ["İlkbahar", "Yaz"], ["Kumquat", "Lime"], ["İris", "Menekşe", "Yasemin"], ["Vanilya", "Misk", "Sandal"], 4, 3, "5-7 saat"],
+  ["Xerjoff", "Lira", 2011, "Kadın", "Amber Vanilya", ["karamel", "kan portakalı", "vanilya"], ["Sonbahar", "Kış"], ["Kan portakalı", "Lavanta", "Bergamot"], ["Tarçın", "Yasemin", "Meyan"], ["Karamel", "Vanilya", "Misk"], 5, 4, "7-9 saat"],
+  ["Xerjoff", "Italica", 2016, "Unisex", "Amber Vanilya", ["badem", "süt", "sandal"], ["Kış", "Sonbahar"], ["Süt", "Badem", "Safran"], ["Toffee", "Vanilya"], ["Sandal", "Misk"], 5, 4, "8-10 saat"],
+  ["Xerjoff", "Quattro Pizzi", 2024, "Unisex", "Amber Meyveli", ["rom", "hindistan cevizi", "tütün"], ["Sonbahar", "Kış"], ["Rom", "Davana", "Pembe biber"], ["Tuberose", "Hindistan cevizi"], ["Tütün", "Tonka", "Saman"], 5, 4, "8-10 saat"]
+]);
+
+const realExpansionPerfumes = [
+  {
+    brand: "Hermes",
+    name: "Twilly d'Hermes",
+    year: 2017,
+    audience: "Kadın",
+    family: "Çiçeksi Baharatlı",
+    accords: ["zencefil", "tuberose", "sandal"],
+    seasons: ["İlkbahar", "Sonbahar"],
+    top: ["Zencefil", "Bergamot", "Acı portakal"],
+    heart: ["Tuberose", "Portakal çiçeği", "Yasemin"],
+    base: ["Sandal", "Vanilya", "Misk"],
+    longevity: 4,
+    projection: 3,
+    color: "#ee8d7a",
+    cap: "#1e1816",
+    seasonNote: "Zencefil ve tuberose canlılığı ılık havada genç, şık ve enerjik durur; ipek eşarp ve renkli aksesuarlarla iyi gider."
+  },
+  {
+    brand: "Hermes",
+    name: "Eau des Merveilles",
+    year: 2004,
+    audience: "Kadın",
+    family: "Amber Odunsu",
+    accords: ["portakal", "ambergris", "odunsu"],
+    seasons: ["İlkbahar", "Yaz", "Sonbahar"],
+    top: ["Portakal", "Limon", "Elemi"],
+    heart: ["Ambergris", "Biber", "Menekşe"],
+    base: ["Sedir", "Meşe yosunu", "Vetiver"],
+    longevity: 4,
+    projection: 3,
+    color: "#d78f52",
+    cap: "#b57b39",
+    seasonNote: "Narenciye ve tuzlu-amberimsi yapı sıcak havada ferah, serin havada sofistike durur."
+  },
+  {
+    brand: "Guerlain",
+    name: "La Petite Robe Noire",
+    year: 2012,
+    audience: "Kadın",
+    family: "Amber Vanilya",
+    accords: ["vişne", "gül", "badem"],
+    seasons: ["Sonbahar", "Kış", "İlkbahar"],
+    top: ["Vişne", "Bergamot", "Badem"],
+    heart: ["Gül", "Çay", "Meyan"],
+    base: ["Tonka", "Vanilya", "Paçuli", "Anason"],
+    longevity: 4,
+    projection: 4,
+    color: "#c86487",
+    cap: "#1f171b",
+    seasonNote: "Vişneli-gül gourmand yapısı serin havada daha zarif ve belirgin olur; siyah elbise ve akşam şehir stiliyle uyumludur."
+  },
+  {
+    brand: "Guerlain",
+    name: "L'Homme Ideal Eau de Parfum",
+    year: 2016,
+    audience: "Erkek",
+    family: "Amber Odunsu",
+    accords: ["badem", "vişne", "deri"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Bergamot", "Baharatlar", "Badem"],
+    heart: ["Vişne", "Tütsü", "Vanilya"],
+    base: ["Deri", "Tonka", "Sandal"],
+    longevity: 5,
+    projection: 4,
+    color: "#8a4f3f",
+    cap: "#191514",
+    seasonNote: "Badem, vişne ve deri üçlüsü serin akşamda sıcak, maskülen ve çekici bir etki verir."
+  },
+  {
+    brand: "Guerlain",
+    name: "Habit Rouge Eau de Parfum",
+    year: 2003,
+    audience: "Erkek",
+    family: "Amber Odunsu",
+    accords: ["narenciye", "deri", "vanilya"],
+    seasons: ["Sonbahar", "Kış", "Dört Mevsim"],
+    top: ["Limon", "Portakal", "Bergamot"],
+    heart: ["Deri", "Gül", "Tarçın"],
+    base: ["Vanilya", "Paçuli", "Benzoin"],
+    longevity: 4,
+    projection: 3,
+    color: "#9f3f33",
+    cap: "#221514",
+    seasonNote: "Klasik narenciye-deri-vanilya çizgisi takım elbise, kaşe palto ve olgun şehir stiline uygundur."
+  },
+  {
+    brand: "Chanel",
+    name: "Allure Homme",
+    year: 1999,
+    audience: "Erkek",
+    family: "Amber Baharatlı",
+    accords: ["narenciye", "şeftali", "tonka"],
+    seasons: ["Dört Mevsim", "İlkbahar"],
+    top: ["Limon", "Mandarin", "Şeftali"],
+    heart: ["Frezya", "Gül", "Baharatlar"],
+    base: ["Tonka", "Sandal", "Vanilya", "Vetiver"],
+    longevity: 4,
+    projection: 3,
+    color: "#c1a27a",
+    cap: "#1d1a18",
+    seasonNote: "Kremamsı baharatlı-narenciye yapısı ofisten akşama taşınabilir; temiz ve klasik erkek şıklığı verir."
+  },
+  {
+    brand: "Chanel",
+    name: "Chance Eau Fraiche Eau de Toilette",
+    year: 2007,
+    audience: "Kadın",
+    family: "Chypre Floral",
+    accords: ["narenciye", "yasemin", "teak"],
+    seasons: ["Yaz", "İlkbahar"],
+    top: ["Limon", "Sedir"],
+    heart: ["Yasemin", "Su sümbülü", "Pembe biber"],
+    base: ["Teak ağacı", "İris", "Amber", "Misk"],
+    longevity: 3,
+    projection: 3,
+    color: "#b9d8b0",
+    cap: "#b7c7aa",
+    seasonNote: "Yeşil-narenciyeli ferahlık sıcak havada çok temiz durur; günlük kullanım ve açık renk kombinlere uygundur."
+  },
+  {
+    brand: "Chanel",
+    name: "Sycomore",
+    year: 2008,
+    audience: "Unisex",
+    family: "Odunsu Aromatik",
+    accords: ["vetiver", "tütsü", "sedir"],
+    seasons: ["Sonbahar", "Kış", "Dört Mevsim"],
+    top: ["Vetiver", "Servi", "Aldehitler"],
+    heart: ["Tütün", "Menekşe", "Pembe biber"],
+    base: ["Sedir", "Sandal", "Tütsü"],
+    longevity: 5,
+    projection: 4,
+    color: "#6f6754",
+    cap: "#171512",
+    seasonNote: "Kuru vetiver ve tütsülü odunsuluk ciddi, minimal ve çok rafine bir imza bırakır."
+  },
+  {
+    brand: "Dior",
+    name: "Hypnotic Poison",
+    year: 1998,
+    audience: "Kadın",
+    family: "Amber Vanilya",
+    accords: ["badem", "vanilya", "hindistan cevizi"],
+    seasons: ["Kış", "Sonbahar"],
+    top: ["Hindistan cevizi", "Kayısı", "Erik"],
+    heart: ["Badem", "Yasemin", "Gül"],
+    base: ["Vanilya", "Misk", "Sandal"],
+    longevity: 5,
+    projection: 4,
+    color: "#a33237",
+    cap: "#1b1112",
+    seasonNote: "Bademli vanilya yoğunluğu soğuk havada hipnotik ve güçlü durur; gece kullanımı için daha uygundur."
+  },
+  {
+    brand: "Dior",
+    name: "Dior Addict",
+    year: 2002,
+    audience: "Kadın",
+    family: "Amber Çiçeksi",
+    accords: ["vanilya", "beyaz çiçek", "tonka"],
+    seasons: ["Kış", "Sonbahar"],
+    top: ["Mandarin yaprağı", "Böğürtlen"],
+    heart: ["Portakal çiçeği", "Yasemin", "Gül"],
+    base: ["Bourbon vanilya", "Tonka", "Sandal"],
+    longevity: 5,
+    projection: 4,
+    color: "#344581",
+    cap: "#1b1f35",
+    seasonNote: "Koyu vanilya ve beyaz çiçek yapısı güçlü, geceye uygun ve feminen bir iz bırakır."
+  },
+  {
+    brand: "Dior",
+    name: "Gris Dior",
+    year: 2013,
+    audience: "Unisex",
+    family: "Chypre Floral",
+    accords: ["gül", "meşe yosunu", "paçuli"],
+    seasons: ["İlkbahar", "Sonbahar", "Dört Mevsim"],
+    top: ["Bergamot"],
+    heart: ["Gül", "Yasemin", "Paçuli"],
+    base: ["Meşe yosunu", "Amber", "Sedir"],
+    longevity: 4,
+    projection: 3,
+    color: "#aaa6a0",
+    cap: "#24211f",
+    seasonNote: "Gri tonlu chypre gül hissi zarif, şehirli ve çok yönlü bir lüks kullanım sunar."
+  },
+  {
+    brand: "Prada",
+    name: "Infusion d'Iris",
+    year: 2007,
+    audience: "Unisex",
+    family: "Çiçeksi Odunsu Misk",
+    accords: ["iris", "neroli", "tütsü"],
+    seasons: ["İlkbahar", "Dört Mevsim"],
+    top: ["Mandarin", "Neroli", "Galbanum"],
+    heart: ["İris", "Menekşe", "Sedir"],
+    base: ["Benzoin", "Tütsü", "Vetiver"],
+    longevity: 4,
+    projection: 3,
+    color: "#d7d2c7",
+    cap: "#c1b7a8",
+    seasonNote: "Sabunsu iris temizliği ofis, beyaz gömlek ve minimal günlük şıklık için çok uygundur."
+  },
+  {
+    brand: "Prada",
+    name: "Luna Rossa Black",
+    year: 2018,
+    audience: "Erkek",
+    family: "Amber Odunsu",
+    accords: ["amber", "paçuli", "kumarin"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Bergamot", "Angelica"],
+    heart: ["Paçuli", "Kumarin"],
+    base: ["Amberwood", "Misk"],
+    longevity: 4,
+    projection: 3,
+    color: "#343138",
+    cap: "#0f0f12",
+    seasonNote: "Pudralı amber ve kumarin sıcaklığı serin akşamda modern, koyu ve yakın mesafe çekicilik verir."
+  },
+  {
+    brand: "Gucci",
+    name: "Guilty Pour Femme",
+    year: 2019,
+    audience: "Kadın",
+    family: "Amber Çiçeksi",
+    accords: ["leylak", "mandalina", "paçuli"],
+    seasons: ["İlkbahar", "Sonbahar"],
+    top: ["Mandarin", "Pembe biber", "Bergamot"],
+    heart: ["Leylak", "Menekşe", "Gül"],
+    base: ["Paçuli", "Amber", "Misk"],
+    longevity: 4,
+    projection: 3,
+    color: "#d3a2a4",
+    cap: "#b68c8c",
+    seasonNote: "Leylak ve paçuli dengesi gündüz şıklığı, blazer ve şehir kullanımı için uygundur."
+  },
+  {
+    brand: "Jean Paul Gaultier",
+    name: "Classique",
+    year: 1993,
+    audience: "Kadın",
+    family: "Amber Çiçeksi",
+    accords: ["portakal çiçeği", "vanilya", "pudralı"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Gül", "Portakal çiçeği", "Anason"],
+    heart: ["Zencefil", "Orkide", "Ylang-ylang"],
+    base: ["Vanilya", "Amber", "Misk"],
+    longevity: 5,
+    projection: 4,
+    color: "#dda0a7",
+    cap: "#1f1a1b",
+    seasonNote: "Pudralı vanilya ve portakal çiçeği imzası retro-feminen, sıcak ve dikkat çekicidir."
+  },
+  {
+    brand: "Jean Paul Gaultier",
+    name: "Scandal Pour Homme",
+    year: 2021,
+    audience: "Erkek",
+    family: "Amber Odunsu",
+    accords: ["karamel", "tonka", "adaçayı"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Adaçayı", "Mandarin"],
+    heart: ["Karamel", "Tonka"],
+    base: ["Vetiver"],
+    longevity: 5,
+    projection: 4,
+    color: "#c28a65",
+    cap: "#2b211c",
+    seasonNote: "Tatlı tonka-karamel gövdesi soğuk havada sosyal, enerjik ve dikkat çekici bir erkek parfümü etkisi verir."
+  },
+  {
+    brand: "Versace",
+    name: "Versace Pour Homme",
+    year: 2008,
+    audience: "Erkek",
+    family: "Aromatik Füjer",
+    accords: ["narenciye", "neroli", "misk"],
+    seasons: ["Yaz", "İlkbahar"],
+    top: ["Limon", "Bergamot", "Neroli", "Gül"],
+    heart: ["Sedir", "Adaçayı", "Geranium"],
+    base: ["Misk", "Amber", "Tonka"],
+    longevity: 3,
+    projection: 3,
+    color: "#9ec7d5",
+    cap: "#9eb8c1",
+    seasonNote: "Temiz narenciyeli erkek ferahlığı yaz gündüzü, ofis ve spor sonrası kullanım için uygundur."
+  },
+  {
+    brand: "Versace",
+    name: "Eros Flame",
+    year: 2018,
+    audience: "Erkek",
+    family: "Odunsu Baharatlı",
+    accords: ["mandalina", "biber", "tonka"],
+    seasons: ["Sonbahar", "Kış"],
+    top: ["Mandalina", "Limon", "Karabiber"],
+    heart: ["Biberiye", "Geranium", "Gül"],
+    base: ["Tonka", "Vanilya", "Sandal", "Paçuli"],
+    longevity: 5,
+    projection: 4,
+    color: "#c74635",
+    cap: "#30201d",
+    seasonNote: "Baharatlı tatlı narenciye karakteri gece çıkışı, deri ceket ve serin havada güçlü durur."
+  },
+  {
+    brand: "Bvlgari",
+    name: "Man in Black",
+    year: 2014,
+    audience: "Erkek",
+    family: "Amber Baharatlı",
+    accords: ["rom", "deri", "baharat"],
+    seasons: ["Kış", "Sonbahar"],
+    top: ["Rom", "Baharatlar", "Tütün"],
+    heart: ["Deri", "Tuberose", "İris"],
+    base: ["Tonka", "Guaiac", "Benzoin"],
+    longevity: 5,
+    projection: 4,
+    color: "#4a302b",
+    cap: "#101010",
+    seasonNote: "Rom, tütün ve deri karanlığı resmi gece, palto ve bar ortamı için güçlü bir profil verir."
+  },
+  {
+    brand: "Bvlgari",
+    name: "Omnia Crystalline",
+    year: 2005,
+    audience: "Kadın",
+    family: "Çiçeksi Akuatik",
+    accords: ["bambu", "lotus", "armut"],
+    seasons: ["Yaz", "İlkbahar"],
+    top: ["Bambu", "Nashi armudu"],
+    heart: ["Lotus", "Çay", "Frenk üzümü"],
+    base: ["Misk", "Guaiac", "Meşe yosunu"],
+    longevity: 3,
+    projection: 2,
+    color: "#dbe4df",
+    cap: "#c4cbc7",
+    seasonNote: "Şeffaf lotus ve bambu ferahlığı sıcak havada hafif, temiz ve zarif durur."
+  },
+  {
+    brand: "Cartier",
+    name: "Declaration",
+    year: 1998,
+    audience: "Erkek",
+    family: "Odunsu Baharatlı",
+    accords: ["kakule", "sedir", "portakal"],
+    seasons: ["İlkbahar", "Sonbahar", "Dört Mevsim"],
+    top: ["Portakal", "Huş", "Bergamot"],
+    heart: ["Kakule", "Artemisia", "Biber"],
+    base: ["Sedir", "Vetiver", "Meşe yosunu"],
+    longevity: 4,
+    projection: 3,
+    color: "#b57b52",
+    cap: "#241d18",
+    seasonNote: "Kakuleli odunsu yapı klasik, ciddi ve şehirli erkek şıklığı için uygundur."
+  },
+  {
+    brand: "Cartier",
+    name: "La Panthere",
+    year: 2014,
+    audience: "Kadın",
+    family: "Chypre Floral",
+    accords: ["gardenya", "misk", "chypre"],
+    seasons: ["İlkbahar", "Sonbahar"],
+    top: ["Ravent", "Çilek", "Anason"],
+    heart: ["Gardenya", "Gül", "Ylang-ylang"],
+    base: ["Misk", "Meşe yosunu", "Paçuli"],
+    longevity: 5,
+    projection: 4,
+    color: "#d6b08f",
+    cap: "#a27b63",
+    seasonNote: "Gardenya ve miskli chypre karakteri zarif ama güçlü bir feminen imza bırakır."
+  },
+  {
+    brand: "Issey Miyake",
+    name: "L'Eau d'Issey Pour Homme",
+    year: 1994,
+    audience: "Erkek",
+    family: "Narenciye Aromatik",
+    accords: ["yuzu", "baharat", "odunsu"],
+    seasons: ["Yaz", "İlkbahar"],
+    top: ["Yuzu", "Limon", "Bergamot"],
+    heart: ["Muskat", "Tarçın", "Nilüfer"],
+    base: ["Vetiver", "Sedir", "Tütün"],
+    longevity: 4,
+    projection: 3,
+    color: "#b6d0c9",
+    cap: "#9faeaa",
+    seasonNote: "Yuzu ve baharatlı ferahlık yazlık ama karakterli bir klasik erkek kullanımı verir."
+  },
+  {
+    brand: "Acqua di Parma",
+    name: "Colonia",
+    year: 1916,
+    audience: "Unisex",
+    family: "Narenciye Aromatik",
+    accords: ["limon", "bergamot", "lavanta"],
+    seasons: ["Yaz", "İlkbahar", "Dört Mevsim"],
+    top: ["Limon", "Bergamot", "Portakal"],
+    heart: ["Lavanta", "Gül", "Biberiye"],
+    base: ["Vetiver", "Sandal", "Paçuli"],
+    longevity: 3,
+    projection: 3,
+    color: "#ecd36a",
+    cap: "#222018",
+    seasonNote: "Klasik İtalyan narenciyesi beyaz gömlek, yaz şehir stili ve temiz gündüz kullanımı için idealdir."
+  }
+];
+
+const verifiedSourceCatalog = buildVerifiedSourceCatalog([
+  ...priorityBrandVerifiedPerfumes,
+  ...realExpansionPerfumes,
+  ...memoParisPerfumes,
+  ...modernEssentials,
+  ...elitePerfumes,
+  ...designerEssentials,
+  ...seedPerfumes
+]);
+const baseCatalog = normalizeCatalog(assignVerifiedRanks(verifiedSourceCatalog));
 const baseCatalogIds = new Set(baseCatalog.map((item) => item.id));
 let catalog = [...baseCatalog, ...normalizeCatalog(loadCustomPerfumes())].sort(compareBestseller);
 let catalogById = new Map(catalog.map((item) => [item.id, item]));
@@ -4372,9 +5405,7 @@ function tierLabel(rank) {
   if (rank <= 250) return t("tiers.top250");
   if (rank <= 500) return t("tiers.top500");
   if (rank <= 1000) return t("tiers.top1000");
-  if (rank <= 5000) return t("tiers.top5000");
-  if (rank <= 25000) return t("tiers.top25000");
-  return t("tiers.top65000");
+  return t("tiers.verified");
 }
 
 function localizedSeasonNote(item) {
@@ -4386,55 +5417,60 @@ function setText(element, value) {
 }
 
 function catalogSummaryText() {
-  return `${catalogTargetTotal.toLocaleString("tr-TR")} parfüm · ${catalogTargetPerAudience.toLocaleString("tr-TR")} erkek · ${catalogTargetPerAudience.toLocaleString("tr-TR")} kadın`;
+  const counts = audienceCounts();
+  return `${catalog.length.toLocaleString("tr-TR")} doğrulanmış parfüm · ${counts.Erkek.toLocaleString("tr-TR")} erkek · ${counts.Kadın.toLocaleString("tr-TR")} kadın · ${counts.Unisex.toLocaleString("tr-TR")} unisex`;
 }
 
-function buildBestsellerCatalog(items) {
-  return ["Erkek", "Kadın"].flatMap((audience, audienceIndex) => {
-    const profile = bestsellerProfiles[audience];
-    const baseItems = items.filter((item) => item.audience === audience || item.audience === "Unisex");
-    const generated = [];
+function audienceCounts(items = catalog) {
+  return items.reduce(
+    (counts, item) => {
+      const audience = item.audience === "Kadın" || item.audience === "Erkek" || item.audience === "Unisex" ? item.audience : "Unisex";
+      counts[audience] += 1;
+      return counts;
+    },
+    { Erkek: 0, Kadın: 0, Unisex: 0 }
+  );
+}
 
-    for (let index = 0; index < profile.target; index += 1) {
-      const base = baseItems[index % baseItems.length];
-      const cycle = Math.floor(index / baseItems.length);
-      const theme = profile.themes[(index + cycle) % profile.themes.length];
-      const edition = cycle === 0 ? "" : ` ${profile.editions[(cycle - 1) % profile.editions.length]}`;
-      const duplicateMark = cycle > profile.editions.length ? ` ${cycle + 1}` : "";
-      const categoryRank = index + 1;
-      const overallRank = categoryRank * 2 - (audienceIndex === 0 ? 1 : 0);
-      const topHundred = categoryRank <= 100;
-      const mergedName = `${base.name}${edition}${duplicateMark}`;
+function buildVerifiedSourceCatalog(items) {
+  const seen = new Map();
 
-      generated.push({
-        ...base,
-        id: makeId(`${audience}-${categoryRank}-${base.brand}-${mergedName}`),
-        name: mergedName,
-        audience,
-        family: cycle === 0 ? base.family : theme.family,
-        accords: cycle === 0 ? base.accords : uniqueList([...theme.accords, ...base.accords]).slice(0, 5),
-        seasons: cycle === 0 ? base.seasons.filter((season) => season !== "Dört Mevsim").concat(base.seasons.includes("Dört Mevsim") ? ["Dört Mevsim"] : []) : theme.seasons,
-        top: cycle === 0 ? base.top : uniqueList([...theme.top, ...base.top]).slice(0, 6),
-        heart: cycle === 0 ? base.heart : uniqueList([...theme.heart, ...base.heart]).slice(0, 6),
-        base: cycle === 0 ? base.base : uniqueList([...theme.base, ...base.base]).slice(0, 6),
-        longevity: cycle === 0 ? base.longevity : Math.min(5, Math.max(3, base.longevity + ((cycle + index) % 3 === 0 ? 1 : 0))),
-        projection: cycle === 0 ? base.projection : Math.min(5, Math.max(2, base.projection + ((cycle + index) % 4 === 0 ? 1 : 0))),
-        color: cycle === 0 ? base.color : theme.color,
-        bestsellerRank: categoryRank,
-        overallRank,
-        bestsellerTier: getBestsellerTier(categoryRank),
-        bestsellerScore: profile.target * 2 + 1 - overallRank,
-        topHundred,
-        outfits: cycle === 0 ? base.outfits : undefined,
-        occasions: cycle === 0 ? base.occasions : undefined,
-        seasonNote:
-          cycle === 0
-            ? `${base.seasonNote} Çok satanlar katalogunda ${audience.toLocaleLowerCase("tr-TR")} kategorisinde #${categoryRank}.`
-            : `${mergedName}, ${base.brand} çizgisinden türetilmiş çok satan profilidir. ${theme.seasons.join(", ")} kullanımı için öne çıkar; ${theme.accords.join(", ")} akorları mevsim karakterini belirler.`
+  items.forEach((item) => {
+    const brand = String(item.brand || "").trim();
+    const name = String(item.name || "").trim();
+    if (!brand || !name) return;
+
+    const key = makeId(`${brand}-${name}`);
+    if (!seen.has(key)) {
+      seen.set(key, {
+        ...item,
+        brand,
+        name,
+        audience: item.audience || "Unisex"
       });
     }
+  });
 
-    return generated;
+  return [...seen.values()];
+}
+
+function assignVerifiedRanks(items) {
+  const audienceRank = { Erkek: 0, Kadın: 0, Unisex: 0 };
+
+  return items.map((item, index) => {
+    const audience = item.audience === "Kadın" || item.audience === "Erkek" || item.audience === "Unisex" ? item.audience : "Unisex";
+    audienceRank[audience] += 1;
+
+    return {
+      ...item,
+      id: item.id || makeId(`${item.brand}-${item.name}-${audience}`),
+      audience,
+      overallRank: index + 1,
+      bestsellerRank: audienceRank[audience],
+      bestsellerTier: getBestsellerTier(index + 1),
+      bestsellerScore: items.length - index,
+      topHundred: index < 100
+    };
   });
 }
 
@@ -4444,9 +5480,7 @@ function getBestsellerTier(rank) {
   if (rank <= 250) return "İlk 250 çok satan";
   if (rank <= 500) return "İlk 500 çok satan";
   if (rank <= 1000) return "İlk 1.000 çok satan";
-  if (rank <= 5000) return "İlk 5.000 çok satan";
-  if (rank <= 25000) return "İlk 25.000 çok satan";
-  return "İlk 65.000 çok satan";
+  return "Doğrulanmış gerçek katalog";
 }
 
 function uniqueList(items) {
@@ -4490,7 +5524,7 @@ function buildSearchIndex(item) {
       item.family,
       item.audience,
       item.bestsellerTier,
-      tierLabel(item.bestsellerRank || catalogTargetPerAudience),
+      tierLabel(item.overallRank || 9999),
       item.topHundred ? "top 100 çok satan top 100 best seller" : "çok satan best seller",
       item.weather?.label,
       item.weather?.range,
@@ -5063,9 +6097,11 @@ function closePerfumeModal() {
 function detailMarkup(item) {
   const weather = item.weather || buildWeatherGuide(item);
   const leadAccords = translateList(item.accords).slice(0, 3).join(" / ");
+  const catalogTotal = Math.max(catalog.length, 1);
+  const currentAudienceTotal = Math.max(audienceCounts()[item.audience] || catalogTotal, 1);
   const popularityRating = Math.max(
     1,
-    Math.ceil(((catalogTargetTotal - (item.overallRank || catalogTargetTotal) + 1) / catalogTargetTotal) * 5)
+    Math.ceil(((catalogTotal - (item.overallRank || catalogTotal) + 1) / catalogTotal) * 5)
   );
 
   return `
@@ -5088,7 +6124,7 @@ function detailMarkup(item) {
         <aside class="profile-scoreboard">
           <div class="profile-rank">
             <strong>${escapeHtml(item.bestsellerRank || "-")}</strong>
-            <span>/${catalogTargetPerAudience.toLocaleString("tr-TR")}<br />Ranking</span>
+            <span>/${currentAudienceTotal.toLocaleString("tr-TR")}<br />Ranking</span>
           </div>
           ${profileMetric("Kalicilik", item.longevityHours, item.longevity)}
           ${profileMetric("Yayilim", `${item.projection}/5`, item.projection)}
