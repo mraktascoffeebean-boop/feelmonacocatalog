@@ -789,6 +789,124 @@ h2 {
     var(--soft-beige);
 }
 
+.brand-filter-panel {
+  margin: 0 0 14px;
+  padding: 12px;
+  border: 1px solid rgba(122, 0, 0, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(120deg, rgba(122, 0, 0, 0.05), transparent 44%, rgba(122, 0, 0, 0.08)),
+    rgba(255, 252, 250, 0.66);
+}
+
+.brand-filter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.brand-filter-head span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 780;
+  text-transform: uppercase;
+}
+
+.brand-filter-head strong {
+  max-width: 58%;
+  color: var(--brand-red);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-pill-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+  scrollbar-gutter: stable;
+  scroll-snap-type: x proximity;
+}
+
+.brand-pill-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.brand-pill-row::-webkit-scrollbar-track {
+  background: rgba(122, 0, 0, 0.08);
+  border-radius: 999px;
+}
+
+.brand-pill-row::-webkit-scrollbar-thumb {
+  background: rgba(122, 0, 0, 0.32);
+  border-radius: 999px;
+}
+
+.brand-pill-row button {
+  flex: 0 0 auto;
+  min-height: 38px;
+  max-width: 190px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(122, 0, 0, 0.2);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 250, 0.9), rgba(255, 252, 250, 0.68)),
+    var(--paper);
+  color: var(--espresso);
+  padding: 8px 11px;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 18px rgba(122, 0, 0, 0.07);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.brand-pill-row button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(122, 0, 0, 0.38);
+  box-shadow: 0 12px 26px rgba(122, 0, 0, 0.12);
+}
+
+.brand-pill-row button.active {
+  background:
+    linear-gradient(135deg, rgba(255, 252, 250, 0.18), transparent 46%, rgba(255, 252, 250, 0.08)),
+    var(--brand-red);
+  color: var(--brand-white);
+  border-color: var(--brand-red);
+}
+
+.brand-pill-row button span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 790;
+}
+
+.brand-pill-row button small {
+  min-width: 24px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(122, 0, 0, 0.08);
+  color: currentColor;
+  font-size: 11px;
+  font-weight: 820;
+}
+
+.brand-pill-row button.active small {
+  background: rgba(255, 252, 250, 0.18);
+}
+
 .perfume-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -1620,6 +1738,31 @@ h2 {
     padding: 0 10px 10px;
   }
 
+  .brand-filter-panel {
+    margin-bottom: 12px;
+    padding: 10px;
+  }
+
+  .brand-filter-head {
+    margin-bottom: 8px;
+  }
+
+  .brand-filter-head strong {
+    max-width: 52%;
+  }
+
+  .brand-pill-row {
+    gap: 7px;
+    padding-bottom: 7px;
+  }
+
+  .brand-pill-row button {
+    min-height: 40px;
+    max-width: 168px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
   .panel-head {
     min-height: 54px;
   }
@@ -2218,6 +2361,41 @@ h2 {
   color: var(--panel-red);
   font-weight: 760;
   box-shadow: none;
+}
+
+.brand-filter-panel {
+  margin-bottom: 16px;
+  border-color: var(--panel-line);
+  background:
+    linear-gradient(120deg, rgba(122, 0, 0, 0.03), transparent 42%, rgba(122, 0, 0, 0.06)),
+    var(--panel-cream);
+  box-shadow: 0 10px 26px rgba(64, 16, 11, 0.05);
+}
+
+.brand-filter-head span {
+  color: var(--panel-muted);
+}
+
+.brand-filter-head strong {
+  color: var(--panel-red);
+}
+
+.brand-pill-row button {
+  border-color: #ead2cf;
+  background: #fffcfa;
+  color: #2b0b08;
+  box-shadow: none;
+}
+
+.brand-pill-row button.active {
+  background: var(--panel-red);
+  color: var(--panel-cream);
+  border-color: var(--panel-red);
+  box-shadow: 0 12px 26px rgba(122, 0, 0, 0.18);
+}
+
+.brand-pill-row button small {
+  background: rgba(122, 0, 0, 0.08);
 }
 
 .perfume-grid {
@@ -2872,6 +3050,27 @@ h2 {
     padding: 0 10px 10px;
   }
 
+  .brand-filter-panel {
+    margin-bottom: 12px;
+    padding: 10px;
+  }
+
+  .brand-filter-head {
+    margin-bottom: 8px;
+  }
+
+  .brand-pill-row {
+    gap: 7px;
+    padding-bottom: 7px;
+  }
+
+  .brand-pill-row button {
+    min-height: 40px;
+    max-width: 170px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
   .perfume-grid {
     grid-template-columns: 1fr;
   }
@@ -2961,6 +3160,20 @@ h2 {
 
   .workspace {
     padding: 10px;
+  }
+
+  .brand-filter-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .brand-filter-head strong {
+    max-width: 100%;
+  }
+
+  .brand-pill-row button {
+    max-width: 150px;
   }
 
   .perfume-card {

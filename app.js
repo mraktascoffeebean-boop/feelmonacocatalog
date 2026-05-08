@@ -4617,6 +4617,7 @@ const state = {
   query: "",
   season: "Tümü",
   family: "Tümü",
+  brand: "Tümü",
   audience: "Tümü",
   sort: "bestseller",
   selectedId: "",
@@ -5330,6 +5331,7 @@ const baseCatalogIds = new Set(baseCatalog.map((item) => item.id));
 let catalog = [...baseCatalog, ...normalizeCatalog(loadCustomPerfumes())].sort(compareBestseller);
 let catalogById = new Map(catalog.map((item) => [item.id, item]));
 let familyFilterOptions = buildFamilyFilterOptions();
+let brandFilterOptions = buildBrandFilterOptions();
 let currentFilteredCatalog = [];
 let searchDebounceTimer = 0;
 
@@ -5351,6 +5353,8 @@ const elements = {
   resultTitle: document.querySelector("#resultTitle"),
   resultCount: document.querySelector("#resultCount"),
   activeFilterLabel: document.querySelector("#activeFilterLabel"),
+  brandFilterLabel: document.querySelector("#brandFilterLabel"),
+  brandFilters: document.querySelector("#brandFilters"),
   clearFiltersButton: document.querySelector("#clearFiltersButton"),
   mobileFilterToggle: document.querySelector("#mobileFilterToggle"),
   perfumeGrid: document.querySelector("#perfumeGrid"),
@@ -5832,6 +5836,7 @@ function bindEvents() {
     state.query = "";
     state.season = "Tümü";
     state.family = "Tümü";
+    state.brand = "Tümü";
     state.audience = "Tümü";
     state.sort = "bestseller";
     elements.searchInput.value = "";
@@ -5875,6 +5880,8 @@ function resetVisibleCount() {
 }
 
 function renderFilters() {
+  renderBrandFilters();
+
   renderButtonGroup(elements.seasonFilters, seasonOptions, state.season, (value) => {
     state.season = value;
     resetVisibleCount();
@@ -5894,12 +5901,61 @@ function renderFilters() {
   });
 }
 
+function renderBrandFilters() {
+  if (!elements.brandFilters) return;
+
+  elements.brandFilters.replaceChildren(
+    ...brandFilterOptions.map((option) => {
+      const button = document.createElement("button");
+      const label = document.createElement("span");
+      const count = document.createElement("small");
+
+      button.type = "button";
+      button.dataset.filterValue = option.value;
+      button.className = option.value === state.brand ? "active" : "";
+      button.setAttribute("aria-pressed", String(option.value === state.brand));
+
+      label.textContent = option.value;
+      count.textContent = option.count ? `${option.count}` : `${catalog.length}`;
+
+      button.append(label, count);
+      button.addEventListener("click", () => {
+        state.brand = option.value;
+        resetVisibleCount();
+        renderBrandFilters();
+        update();
+        elements.perfumeGrid?.scrollIntoView({ block: "start", behavior: "smooth" });
+      });
+
+      return button;
+    })
+  );
+
+  if (elements.brandFilterLabel) {
+    elements.brandFilterLabel.textContent = isAllFilter(state.brand) ? "Tümü" : state.brand;
+  }
+}
+
 function buildFamilyFilterOptions() {
   return ["Tümü", ...new Set(catalog.map((item) => item.family).filter(Boolean))].sort((a, b) => {
     if (a === "Tümü") return -1;
     if (b === "Tümü") return 1;
     return textCollator.compare(translateTerm(a), translateTerm(b));
   });
+}
+
+function buildBrandFilterOptions() {
+  const counts = catalog.reduce((map, item) => {
+    if (!item.brand) return map;
+    map.set(item.brand, (map.get(item.brand) || 0) + 1);
+    return map;
+  }, new Map());
+
+  const brands = [...counts.entries()]
+    .map(([value, count]) => ({ value, count }))
+    .sort((a, b) => b.count - a.count || textCollator.compare(a.value, b.value));
+
+  return [{ value: "Tümü", count: catalog.length }, ...brands];
 }
 
 function renderButtonGroup(container, options, activeValue, onSelect) {
@@ -5935,7 +5991,7 @@ function update() {
   }
 
   elements.catalogMeta.textContent = catalogSummaryText();
-  elements.resultTitle.textContent = state.query ? t("resultsFor", { query: state.query }) : t("bestsellers");
+  elements.resultTitle.textContent = buildResultTitle();
   elements.resultCount.textContent = `${filtered.length} ${t("perfume")}`;
   elements.activeFilterLabel.textContent = buildActiveLabel();
 
@@ -5948,6 +6004,7 @@ function getFilteredCatalog() {
   const query = normalizeSearchText(state.query);
   const hasSeason = !isAllFilter(state.season);
   const hasFamily = !isAllFilter(state.family);
+  const hasBrand = !isAllFilter(state.brand);
   const hasAudience = !isAllFilter(state.audience);
   const filtered = [];
 
@@ -5955,6 +6012,7 @@ function getFilteredCatalog() {
     if (query && !item.searchIndex.includes(query)) continue;
     if (hasSeason && !item.seasons.includes(state.season)) continue;
     if (hasFamily && item.family !== state.family) continue;
+    if (hasBrand && item.brand !== state.brand) continue;
     if (hasAudience && item.audience !== state.audience) continue;
     filtered.push(item);
   }
@@ -5974,8 +6032,15 @@ function compareForActiveSort(a, b) {
   return textCollator.compare(a.name, b.name);
 }
 
+function buildResultTitle() {
+  if (state.query) return t("resultsFor", { query: state.query });
+  if (!isAllFilter(state.brand)) return `${state.brand} parfümleri`;
+  return t("bestsellers");
+}
+
 function buildActiveLabel() {
   const labels = [];
+  if (!isAllFilter(state.brand)) labels.push(state.brand);
   if (!isAllFilter(state.season)) labels.push(translateTerm(state.season));
   if (!isAllFilter(state.family)) labels.push(translateTerm(state.family));
   if (!isAllFilter(state.audience)) labels.push(translateTerm(state.audience));
@@ -6340,6 +6405,7 @@ async function importCatalog(event) {
   catalog = [...catalog, ...uniqueIncoming].sort(compareBestseller);
   catalogById = new Map(catalog.map((item) => [item.id, item]));
   familyFilterOptions = buildFamilyFilterOptions();
+  brandFilterOptions = buildBrandFilterOptions();
   saveCustomPerfumes(catalog);
   renderFilters();
   resetVisibleCount();
